@@ -1,0 +1,14 @@
+langchain 
+numpy 
+python-dotenv 
+rank-bm25 
+langchain-community 
+langchain_openai 
+fitz 
+asyncio 
+tools 
+deepeval 
+rfc3987 
+faiss-cpu 
+sentence-transformers 
+pypdf

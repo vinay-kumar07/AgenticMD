@@ -1,0 +1,122 @@
+[
+  {
+    "question": "You need to compute elastic constants of hcp Be in LAMMPS. Which potential from the dataset is appropriate, and why would the universal shifted LJ be a poor choice here?",
+    "potential": "Agrawal et al. (2013) EAM for Be"
+  },
+  {
+    "question": "To study vacancy formation and interstitial defect properties in Be with results validated against DFT, which potential should you select?",
+    "potential": "Agrawal et al. (2013) EAM for Be"
+  },
+  {
+    "question": "You want to compare lattice energies of different Be crystal structures (e.g., hcp vs bcc). Which potential was validated for lattice energies across structures?",
+    "potential": "Agrawal et al. (2013) EAM for Be"
+  },
+  {
+    "question": "You need similar or better accuracy than available MEAM potentials for bulk Be but with lower computational cost. Which potential satisfies this tradeoff?",
+    "potential": "Agrawal et al. (2013) EAM for Be"
+  },
+  {
+    "question": "Your Be simulations require a long interaction range covering roughly the eighth neighbor shell (~5 Å cutoff). Which potential uses such a cutoff?",
+    "potential": "Agrawal et al. (2013) EAM for Be"
+  },
+  {
+    "question": "You plan to simulate oxygen irradiation of a Be surface and early oxide layer formation. Which potential is tailored for this plasma-surface interaction scenario?",
+    "potential": "Byggmästar et al. (2018) Be-O bond-order (Tersoff/ZBL)"
+  },
+  {
+    "question": "For thermal and elastic properties of BeO nanotubes and nanosheets, which provided potential should be used in LAMMPS?",
+    "potential": "Byggmästar et al. (2018) Be-O bond-order (Tersoff/ZBL)"
+  },
+  {
+    "question": "Your Be-O simulation involves high-energy impacts; you need proper short-range repulsion. Which potential includes a ZBL short-range correction?",
+    "potential": "Byggmästar et al. (2018) Be-O bond-order (Tersoff/ZBL)"
+  },
+  {
+    "question": "If you use only the Be-Be part of the provided Be-O potential file for a pure Be simulation, which underlying source should you cite for the Be-Be interaction?",
+    "potential": "Byggmästar et al. (2018) Be-O bond-order (Tersoff/ZBL)"
+  },
+  {
+    "question": "Which LAMMPS pair_style is appropriate for the provided file Be-O.tersoff.zbl?",
+    "potential": "Byggmästar et al. (2018) Be-O bond-order (Tersoff/ZBL)"
+  },
+  {
+    "question": "You need to reproduce the Be2 dimer equilibrium separation and bond dissociation energy with a smooth (energy-continuous) cutoff. Which potential matches this use case?",
+    "potential": "Elliott & Akerson (2015) universal shifted LJ for Be (openKIM LJ612)"
+  },
+  {
+    "question": "In a mixed-species LJ simulation that includes Be, which mixing rule is used by the provided universal LJ parameterization to generate cross-interactions?",
+    "potential": "Elliott & Akerson (2015) universal shifted LJ for Be (openKIM LJ612)"
+  },
+  {
+    "question": "When choosing this generic LJ parameterization for Be in LAMMPS, what limitation about its transferability to bulk or defect properties should you keep in mind?",
+    "potential": "Elliott & Akerson (2015) universal shifted LJ for Be (openKIM LJ612)"
+  },
+  {
+    "question": "You want to avoid force discontinuities at the cutoff for Be-Be LJ interactions in a test simulation. Which provided model offers a shifted-cutoff formulation to ensure energy continuity?",
+    "potential": "Elliott & Akerson (2015) universal shifted LJ for Be (openKIM LJ612)"
+  },
+  {
+    "question": "Through which framework would you access this universal shifted LJ parameterization for Be in LAMMPS?",
+    "potential": "Elliott & Akerson (2015) universal shifted LJ for Be (openKIM LJ612)"
+  },
+    {
+    "question": "You need an EAM potential in LAMMPS that reliably reproduces cohesive energy, elastic constants, and lattice parameters of hexagonal beryllium. Which potential should you choose?",
+    "potential": "2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be"
+  },
+  {
+    "question": "To compute relaxed vacancy formation energies and study vacancy clusters and interstitials in Be with validation against DFT/experiment, which potential is most appropriate?",
+    "potential": "2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be"
+  },
+  {
+    "question": "You want to model Be surface properties (e.g., surface formation energies) in LAMMPS with a potential validated against first-principles data. Which potential should you use?",
+    "potential": "2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be"
+  },
+  {
+    "question": "Your Be simulation should include interactions out to about 5 Å (covering roughly the eighth neighbor shell) to improve accuracy. Which potential explicitly uses this large cutoff?",
+    "potential": "2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be"
+  },
+  {
+    "question": "You prefer a Be potential that is computationally less intensive than modified EAMs yet matches or exceeds their accuracy for bulk properties. Which potential fits this requirement?",
+    "potential": "2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be"
+  },
+  {
+    "question": "For a simple LAMMPS test focused on Be dimer equilibrium distance and dissociation energy, with continuity of energy at the cutoff, which potential is most suitable?",
+    "potential": "2015--Elliott-R-S-Akerson-A--Be"
+  },
+  {
+    "question": "In an NVE simulation you require a Be–Be model with a shifted cutoff so the energy is continuous at the cutoff radius. Which potential guarantees this behavior?",
+    "potential": "2015--Elliott-R-S-Akerson-A--Be"
+  },
+  {
+    "question": "You are setting up a multi-species LJ simulation via openKIM that relies on Lorentz–Berthelot mixing for cross terms. Which Be potential aligns with this approach?",
+    "potential": "2015--Elliott-R-S-Akerson-A--Be"
+  },
+  {
+    "question": "To simulate oxygen irradiation of a Be surface and the early stages of oxide layer formation in LAMMPS, which Be–O potential should you select?",
+    "potential": "2018--Byggmastar-J-Hodille-E-A-Ferro-Y-Nordlund-K--Be-O"
+  },
+  {
+    "question": "You plan to model the thermal and elastic properties of BeO nanotubes and nanosheets. Which potential is designed for these Be–O nanostructures?",
+    "potential": "2018--Byggmastar-J-Hodille-E-A-Ferro-Y-Nordlund-K--Be-O"
+  },
+  {
+    "question": "For plasma–surface interaction simulations involving oxygen or oxide layers on beryllium, which Be–O potential is most appropriate?",
+    "potential": "2018--Byggmastar-J-Hodille-E-A-Ferro-Y-Nordlund-K--Be-O"
+  },
+  {
+    "question": "If you use only the Be–Be part from the Be–O bond-order parameterization, which original elemental Be–Be potential should you cite according to the notes?",
+    "potential": "2018--Byggmastar-J-Hodille-E-A-Ferro-Y-Nordlund-K--Be-O"
+  },
+  {
+    "question": "If you use only the O–O part from the Be–O bond-order parameterization, which original elemental O–O potential should you cite according to the notes?",
+    "potential": "2018--Byggmastar-J-Hodille-E-A-Ferro-Y-Nordlund-K--Be-O"
+  },
+  {
+    "question": "For predicting lattice energies of multiple Be crystal structures with better accuracy than previous EAMs in LAMMPS, which potential has been validated against first-principles results?",
+    "potential": "2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be"
+  },
+  {
+    "question": "You need Be–O interactions that include appropriate short-range repulsion for ion irradiation simulations; which available potential file is designed with ZBL short-range behavior?",
+    "potential": "2018--Byggmastar-J-Hodille-E-A-Ferro-Y-Nordlund-K--Be-O"
+  }
+]

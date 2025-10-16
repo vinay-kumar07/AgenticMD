@@ -1,0 +1,33 @@
+[
+    {
+        "element": "Be",
+        "id": "2015--Elliott-R-S-Akerson-A--Be",
+        "link": "../../entry/2015--Elliott-R-S-Akerson-A--Be",
+        "citation": "Citation: R.S. Elliott, and A. Akerson (2015), \"Efficient \"universal\" shifted Lennard-Jones model for all KIM API supported species\".",
+        "abstract": null,
+        "notes": "Notes: This is the Be interaction from the \"Universal\" parameterization for the openKIM LennardJones612 model driver.The parameterization uses a shifted cutoff so that all interactions have a continuous energy function at the cutoff radius. This model was automatically fit using Lorentz-Berthelotmixing rules. It reproduces the dimer equilibrium separation (covalent radii) and the bond dissociation energies. It has not been fitted to other physical properties and its ability to model structures other than dimers is unknown.  See the README and params files on the KIM model page for more details.",
+        "files": []
+    },
+    {
+        "element": "Be",
+        "id": "2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be",
+        "link": "../../entry/2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be",
+        "citation": "Citation: A. Agrawal, R. Mishra, L. Ward, K.M. Flores, and W. Windl (2013), \"An embedded atom method potential of beryllium\", Modelling and Simulation in Materials Science and Engineering 21(8) , 085001. DOI: 10.1088/0965-0393/21/8/085001 .",
+        "abstract": "Abstract: We present an embedded atom method (EAM) potential for hexagonal beryllium, with a pair function in the form of a Morse potential and a Johnson embedding function with exponential electron density. The cohesive energy, elastic constants, lattice parameters and relaxed vacancy formation energy were used to fit the potential. The fitted-potential was validated by a comparison to first-principles and, wherever available, experimental results for the lattice energies of various crystal structures: vacancy cluster, interstitial formation and surface. Using a large cutoff distance of 5 \u00c5, which includes interactions to approximately the eighth neighbor shell of beryllium, allows our potential to reproduce these quantities considerably better than previous EAM potentials. The accuracy obtained by our potential is similar to or in some cases even better than available modified EAM potentials, while being computationally less intensive.",
+        "notes": "Notes: There is a corrigendum for the publication located here .",
+        "files": [
+            "../../Download/2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be/1/Be_Agrawal.eam.alloy"
+        ]
+    },
+    {
+        "element": "Be",
+        "id": "2018--Byggmastar-J-Hodille-E-A-Ferro-Y-Nordlund-K--Be-O",
+        "link": "../../entry/2018--Byggmastar-J-Hodille-E-A-Ferro-Y-Nordlund-K--Be-O",
+        "citation": "Citation: J. Byggm\u00e4star, E.A. Hodille, Y. Ferro, and K. Nordlund (2018), \"Analytical bond order potential for simulations of BeO 1D and 2D nanostructures and plasma-surface interactions\", Journal of Physics: Condensed Matter 30(13) , 135001. DOI: 10.1088/1361-648x/aaafb3 .",
+        "abstract": "Abstract: An analytical interatomic bond order potential for the Be\u2013O system is presented. The potential is fitted and compared to a large database of bulk BeO and point defect properties obtained using density functional theory. Its main applications include simulations of plasma-surface interactions involving oxygen or oxide layers on beryllium, as well as simulations of BeO nanotubes and nanosheets. We apply the potential in a study of oxygen irradiation of Be surfaces, and observe the early stages of an oxide layer forming on the Be surface. Predicted thermal and elastic properties of BeO nanotubes and nanosheets are simulated and compared with published ab initio data.",
+        "notes": "Notes: J. Byggm\u00e4star (University of Helsinki) noted that the pure elemental potentials for Be-Be and O-O are from the following references: Be-Be: Bj\u00f6rkas, C., Juslin, N., Timko, H., V\u00f6rtler, K., Nordlund, K., Henriksson, K., & Erhart, P. (2009). Interatomic potentials for the Be\u2013C\u2013H system. Journal of Physics: Condensed Matter, 21(44), 445002. DOI: 10.1088/0953-8984/21/44/445002 O-O: Erhart, P., Juslin, N., Goy, O., Nordlund, K., M\u00fcller, R., & Albe, K. (2006). Analytic bond-order potential for atomistic simulations of zinc oxide. Journal of Physics: Condensed Matter, 18(29), 6585\u20136605. DOI: https://doi.org/10.1088/0953-8984/18/29/003 which should be cited if only the Be-Be or O-O parts are used.",
+        "files": [
+            "../../Download/2018--Byggmastar-J-Hodille-E-A-Ferro-Y-Nordlund-K--Be-O/1/Be-O.tersoff.zbl"
+        ]
+    }
+]

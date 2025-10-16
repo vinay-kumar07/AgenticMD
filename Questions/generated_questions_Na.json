@@ -1,0 +1,122 @@
+[
+  {
+    "question": "You plan to compute sodium’s melting point via a two-phase coexistence simulation at ambient pressure and expect a value near 370 K. Which potential should you use?",
+    "potential": "2016--Nichol-A-Ackland-G-J--Na"
+  },
+  {
+    "question": "You need a Na potential fitted to cohesive and vacancy energies, elastic moduli, and the lattice parameter to study 0 K mechanical properties. Which model is appropriate?",
+    "potential": "2016--Nichol-A-Ackland-G-J--Na"
+  },
+  {
+    "question": "You want to reproduce the low-temperature instability of bcc Na without using a fit that includes finite-temperature properties. Which potential can capture this behavior?",
+    "potential": "2016--Nichol-A-Ackland-G-J--Na"
+  },
+  {
+    "question": "To determine the solid–liquid interface free energy for bcc Na and compare with Laird/Ewing relations, which Na potential was specifically developed for this purpose?",
+    "potential": "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--Na"
+  },
+  {
+    "question": "You want to investigate how intentionally increasing latent heat and making the liquid less ordered affects SLI free energy in Na. Which synthetic Na potential should you choose first?",
+    "potential": "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--fictional-Na-2"
+  },
+  {
+    "question": "For a second, independent test of SLI free-energy sensitivity to increased latent heat and reduced liquid order in Na, which alternative synthetic potential will you use?",
+    "potential": "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--fictional-Na-3"
+  },
+  {
+    "question": "You require a Na EAM/FS potential file suitable for LAMMPS to study the liquid structure near melting and SLI properties. Which model provides such a file and was designed for this task?",
+    "potential": "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--Na"
+  },
+  {
+    "question": "You are evaluating ionic compound structure stability across B1 (NaCl), B2 (CsCl), and B3 (zinc-blende) phases using a calibrated database with intrinsic bond lengths. Which potential set should you use?",
+    "potential": "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I"
+  },
+  {
+    "question": "To study the effect of atomic size on the stability of B1, B2, and B3 structures in alkali halides, which interatomic potential file would you deploy in LAMMPS?",
+    "potential": "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I"
+  },
+  {
+    "question": "You want a Morse-type Na potential derived from energy of vaporization, lattice constant, and compressibility to examine the equation of state and elastic constants in cubic metals. Which reference should you use?",
+    "potential": "1959--Girifalco-L-A-Weizer-V-G--Na"
+  },
+  {
+    "question": "You need a simple Na interaction with a continuous energy at the cutoff and parameters generated via Lorentz–Berthelot mixing for quick cross-species tests, recognizing it is fit only to dimer properties. Which model do you select?",
+    "potential": "2015--Elliott-R-S-Akerson-A--Na"
+  },
+  {
+    "question": "For a study focusing on dimer equilibrium separation and bond dissociation energy of Na rather than bulk properties, which shifted Lennard-Jones parameterization is appropriate?",
+    "potential": "2015--Elliott-R-S-Akerson-A--Na"
+  },
+  {
+    "question": "To benchmark Na cohesive energy, elastic constants, and lattice parameter against known values from the fitting data, which potential is expected to match closely?",
+    "potential": "2016--Nichol-A-Ackland-G-J--Na"
+  },
+  {
+    "question": "You want to compare SLI free-energy predictions between a realistic Na potential and a modified one with higher latent heat. Which synthetic Na potential would you use as the perturbed case?",
+    "potential": "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--fictional-Na-2"
+  },
+  {
+    "question": "You are exploring trends in simple alkali metals (including Na) and need an analytic potential that captures crystal stability and thermodynamic behavior without fitting to finite-T data. Which potential should you choose?",
+    "potential": "2016--Nichol-A-Ackland-G-J--Na"
+  },
+  {
+    "question": "You plan a two-phase coexistence simulation in LAMMPS to predict sodium’s melting point at ambient pressure. Which Na potential was explicitly used to obtain accurate melting points from such simulations?",
+    "potential": "2016--Nichol-A-Ackland-G-J--Na"
+  },
+  {
+    "question": "You need a Na potential fitted to cohesive energy, vacancy formation energy, elastic moduli, and lattice parameter so these properties match in your calculations. Which potential should you choose?",
+    "potential": "2016--Nichol-A-Ackland-G-J--Na"
+  },
+  {
+    "question": "You want to examine crystalline stability trends of alkali metals (including Na) using a simple analytic potential fitted only to static properties yet transferable to thermodynamic predictions. Which Na potential is appropriate?",
+    "potential": "2016--Nichol-A-Ackland-G-J--Na"
+  },
+  {
+    "question": "You plan to compute Na’s vacancy formation energy and compare directly to a value used in the fitting database. Which Na potential is most suitable?",
+    "potential": "2016--Nichol-A-Ackland-G-J--Na"
+  },
+  {
+    "question": "You aim to determine the solid–liquid interface free energy for bcc sodium near its melting point in LAMMPS. Which semi-empirical Na potential was designed specifically for SLI studies?",
+    "potential": "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--Na"
+  },
+  {
+    "question": "To isolate how an increased latent heat and a less ordered liquid affect SLI free energy in bcc Na, which synthetic Na potential variant should you use?",
+    "potential": "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--fictional-Na-2"
+  },
+  {
+    "question": "You want a second synthetic Na potential to further test sensitivity of SLI free energy to liquid structure and latent heat changes. Which variant would you pick?",
+    "potential": "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--fictional-Na-3"
+  },
+  {
+    "question": "For a pedagogical MD test where you only need a Na dimer potential and want energy continuity at the cutoff (shifted LJ), which openKIM model would you select?",
+    "potential": "2015--Elliott-R-S-Akerson-A--Na"
+  },
+  {
+    "question": "You need a simple Na pair potential in LAMMPS that reproduces Na dimer properties via Lorentz–Berthelot mixing rules but was not fit to bulk solids. Which potential matches this description?",
+    "potential": "2015--Elliott-R-S-Akerson-A--Na"
+  },
+  {
+    "question": "To evaluate B1 (NaCl), B2 (CsCl), and B3 (zinc-blende) structure preference for Na-containing ionic compounds as a function of ionic sizes, which calibrated potential database should you use?",
+    "potential": "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I"
+  },
+  {
+    "question": "You want to compute the equation of state and elastic constants of cubic sodium using a classic Morse-based parameterization constructed from energy of vaporization, lattice constant, and compressibility. Which potential applies?",
+    "potential": "1959--Girifalco-L-A-Weizer-V-G--Na"
+  },
+  {
+    "question": "For simulations involving large homogeneous deformations of cubic Na where a Morse potential satisfying stability conditions is desired, which parameterization should you choose?",
+    "potential": "1959--Girifalco-L-A-Weizer-V-G--Na"
+  },
+  {
+    "question": "You plan to benchmark empirical relations (e.g., Laird, Ewing) against MD data for bcc Na SLI free energies. Which Na potential provides the realistic baseline used in such comparisons?",
+    "potential": "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--Na"
+  },
+  {
+    "question": "You want an EAM/FS sodium potential expressly intended for solid–liquid interface studies (distributed as Na_MendelevM_2014.eam.fs). Which model is this?",
+    "potential": "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--Na"
+  },
+  {
+    "question": "To test how well a potential fitted only to static crystalline properties can transfer to finite-temperature predictions (e.g., melting) for Na without using force data, which Na model should you run?",
+    "potential": "2016--Nichol-A-Ackland-G-J--Na"
+  }
+]

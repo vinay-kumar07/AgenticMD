@@ -1,0 +1,7 @@
+__pycache__/
+RAG_TECHNIQUES/
+.env
+logs/
+docs.lammps.org/
+.deepeval/
+.vscode/

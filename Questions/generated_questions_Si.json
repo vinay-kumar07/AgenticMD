@@ -1,0 +1,122 @@
+[
+  {
+    "question": "You want to compute the lattice thermal conductivity of bulk crystalline Si between 300–500 K using nonequilibrium MD in LAMMPS and match experimental values. Which Stillinger–Weber parameterization, fit by force-matching to DFT specifically for thermal conduction, should you choose?",
+    "potential": "2012--Lee-Y-Hwang-G-S--Si-GGA"
+  },
+  {
+    "question": "You need to model monolayer silicene with accurate low-buckled structure and full phonon dispersion and then evaluate its thermal conductivity via MD. Which optimized Stillinger–Weber parameter set tailored to 2D silicene should you use?",
+    "potential": "2014--Zhang-X-Xie-H-Hu-M-et-al--Si-1"
+  },
+  {
+    "question": "To study the thermal stability of free-standing silicene nanoribbons and predict collapse of single-layer silicene at room temperature while bilayer remains stable, which modified Tersoff potential for Si should be used?",
+    "potential": "2017--Purja-Pun-G-P-Mishin-Y--Si"
+  },
+  {
+    "question": "You plan a LAMMPS simulation of dynamic brittle fracture in single-crystal silicon, but the original Stillinger–Weber gives ductile behavior. Which SW parameterization with doubled lambda should you use to obtain brittle crack propagation?",
+    "potential": "1999--Hauch-J-A-Holland-D-Marder-M-P-Swinney-H-L--Si"
+  },
+  {
+    "question": "You require a bond-order potential for Si that reproduces both elastic constants and the melting point within a Tersoff-style formalism for classical MD. Which modified Tersoff model should you select?",
+    "potential": "2007--Kumagai-T-Izumi-S-Hara-S-Sakai-S--Si"
+  },
+  {
+    "question": "You need to model Si surfaces including Si(111)-(7×7) with realistic adatom and rest-atom behavior and still retain good bulk properties. Which modified Stillinger–Weber potential should you choose?",
+    "potential": "1996--Stephenson-P-C-L-Radny-M-W-Smith-P-V--Si"
+  },
+  {
+    "question": "For simulating adatom diffusion on Si(001)-(2×1) surfaces without anomalous abrupt bonding-energy variations, which modified Tersoff potential with a screened-Morse tail is appropriate?",
+    "potential": "1991--Wang-J-Rockett-A--Si"
+  },
+  {
+    "question": "You plan to explore the energy landscape of silicon tetra-interstitial clusters using minima-hopping searches in LAMMPS. Which optimized empirical potential for Si defects should you employ?",
+    "potential": "2011--Du-Y-A-Lenosky-T-J-Hennig-R-G-et-al--Si"
+  },
+  {
+    "question": "To study disordered phases and defects in Si, including realistic amorphous structures and partial dislocations, which EDIP potential should you use in LAMMPS?",
+    "potential": "1998--Justo-J-F-Bazant-M-Z-Kaxiras-E-et-al--Si"
+  },
+  {
+    "question": "You need a MEAM potential to simulate Al–Si–Mg–Cu–Fe alloys (e.g., AA6061) and evaluate thermal expansion and defect energetics across the alloy system. Which multi-component MEAM parameter set should you select?",
+    "potential": "2012--Jelinek-B-Groh-S-Horstemeyer-M-F-et-al--Al-Si-Mg-Cu-Fe"
+  },
+  {
+    "question": "To study crystallization pathways and threshold cooling rates in undercooled Si–Au melts during rapid quenching, which potential specifically developed for Si–Au should be used?",
+    "potential": "2018--Starikov-S-V-Lopanitsyna-N-Y-Smirnova-D-E-Makarov-S-V--Si-Au"
+  },
+  {
+    "question": "You want to generate SiO2 glass via melt–quench MD in LAMMPS and compare the radial distribution function and phonon DOS to experiment. Which Tersoff-parameterized Si–O potential should you choose?",
+    "potential": "2007--Munetoh-S-Motooka-T-Moriguchi-K-Shintani-A--Si-O"
+  },
+  {
+    "question": "You aim to model the Si–O system across crystalline and amorphous phases, including silica aerogels, surfaces, and high-pressure silica up to ~200 GPa, within LAMMPS using a machine-learning potential. Which actively learned ACE model should you use (noting it should not be applied to high-pressure Si)?",
+    "potential": "2024--Erhard-L-C-Rohrer-J-Albe-K-Deringer-V-L--Si-O"
+  },
+  {
+    "question": "To simulate silicon oxycarbide (Si–O–C) glass-ceramics and study composition–stiffness relations with realistic amorphous structures, which ML interatomic potential should you employ?",
+    "potential": "2024--Leimeroth-N-Rohrer-J-Albe-K--Si-O-C"
+  },
+  {
+    "question": "You need near-DFT accuracy for energies, forces, elastic constants, and phonon dispersions in crystalline silicon within LAMMPS, accepting higher computational cost than classical potentials. Which SNAP-based ML potential from Zuo et al. should you use?",
+    "potential": "2020--Zuo-Y-Chen-C-Li-X-et-al--Si-SNAP"
+  },
+  {
+    "question": "In LAMMPS, you need near-DFT accuracy for phonon dispersion and elastic constants of crystalline silicon; which machine-learned potential from Zuo et al. would you choose, and what accuracy–cost trade-off should you expect?",
+    "potential": "2020--Zuo-Y-Chen-C-Li-X-et-al--Si-SNAP"
+  },
+  {
+    "question": "You are modeling thermal conductivity of a single-layer silicene sheet and want a potential tuned for the low-buckled structure and phonon dispersion of silicene (not bulk Si). Which parameterization should you use?",
+    "potential": "2014--Zhang-X-Xie-H-Hu-M-et-al--Si-1"
+  },
+  {
+    "question": "To study the thermal stability of single-layer versus bilayer silicene nanostructures at room temperature, which optimized modified Tersoff potential for silicon should you employ?",
+    "potential": "2017--Purja-Pun-G-P-Mishin-Y--Si"
+  },
+  {
+    "question": "Your MD fracture simulation of single-crystal Si requires brittle crack propagation; which Stillinger–Weber parameterization should you select to avoid the ductile response of the original SW potential?",
+    "potential": "1999--Hauch-J-A-Holland-D-Marder-M-P-Swinney-H-L--Si"
+  },
+  {
+    "question": "You plan nonequilibrium MD in LAMMPS to match bulk silicon lattice thermal conductivities between 300–500 K. Which force-matched Stillinger–Weber parameter set should you choose?",
+    "potential": "2012--Lee-Y-Hwang-G-S--Si-GGA"
+  },
+  {
+    "question": "You need to explore the energy landscape and discover low-energy tetra-interstitial clusters in Si via minima hopping and dimer searches. Which optimized classical potential should you use?",
+    "potential": "2011--Du-Y-A-Lenosky-T-J-Hennig-R-G-et-al--Si"
+  },
+  {
+    "question": "To simulate Si(111)-(7×7) and other reconstructed Si surfaces with improved accuracy while retaining reasonable bulk behavior, which modified Stillinger–Weber potential is appropriate?",
+    "potential": "1996--Stephenson-P-C-L-Radny-M-W-Smith-P-V--Si"
+  },
+  {
+    "question": "For large-scale MD of defects, dislocations (30° and 90° partials), and amorphization in silicon with realistic liquid and amorphous structures, which potential provides good transferability to disordered phases?",
+    "potential": "1998--Justo-J-F-Bazant-M-Z-Kaxiras-E-et-al--Si"
+  },
+  {
+    "question": "You want to simulate thermomechanical properties of an AA6061-like Al–Si–Mg–Cu–Fe alloy in LAMMPS using a single consistent framework. Which MEAM potential set should you use?",
+    "potential": "2012--Jelinek-B-Groh-S-Horstemeyer-M-F-et-al--Al-Si-Mg-Cu-Fe"
+  },
+  {
+    "question": "For rapid-cooling crystallization studies of Si–Au melts and assessing cooling-rate thresholds versus Au content, which ADP/modified potential should you employ?",
+    "potential": "2018--Starikov-S-V-Lopanitsyna-N-Y-Smirnova-D-E-Makarov-S-V--Si-Au"
+  },
+  {
+    "question": "To generate SiO2 glass by melt-quench MD and reproduce radial distribution functions and phonon DOS comparable to experiment, which Si–O Tersoff parameterization should you choose?",
+    "potential": "2007--Munetoh-S-Motooka-T-Moriguchi-K-Shintani-A--Si-O"
+  },
+  {
+    "question": "You need a unified machine-learned potential for crystalline, amorphous, and high-pressure silica (up to ~200 GPa), silica surfaces, and mixed Si–SiO2 systems at ambient pressure; which ACE potential is suitable and what limitation should you note?",
+    "potential": "2024--Erhard-L-C-Rohrer-J-Albe-K-Deringer-V-L--Si-O"
+  },
+  {
+    "question": "For near-DFT accuracy across multiple condensed phases of silica, including glass formation and pressure-induced coordination changes, which GAP model would you use in LAMMPS?",
+    "potential": "2022--Erhard-L-C-Rohrer-J-Albe-K-Deringer-V-L--Si-O"
+  },
+  {
+    "question": "To study plastic anisotropy and kinking nonlinear elasticity in Ti3SiC2 MAX phase within LAMMPS using a bond-order formalism, which potential should you select?",
+    "potential": "2019--Plummer-G-Tucker-G-J--Ti-Si-C"
+  },
+  {
+    "question": "If you need a silicon bond-order potential that reproduces both elastic constants and a realistic melting point for diamond-cubic Si in MD, which modified Tersoff parameterization should you adopt?",
+    "potential": "2007--Kumagai-T-Izumi-S-Hara-S-Sakai-S--Si"
+  }
+]

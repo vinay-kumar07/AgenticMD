@@ -1,0 +1,62 @@
+[
+    {
+        "question": "Identify the Stillinger\u2013Weber (SW) potential for diamond-cubic silicon that was reparameterized by force-matching to DFT (ab initio) forces specifically to reproduce phonon properties and lattice thermal conductivity, and that yields bulk Si thermal conductivity close to experiment (~130\u2013150 W m\u22121 K\u22121 at 300 K) over 300\u2013500 K in LAMMPS NEMD simulations. Provide the potential name/label, primary citation (authors, year, DOI), and the corresponding LAMMPS potential file name, and distinguish it from the original 1985 SW and other non-SW (e.g., Tersoff) models.",
+        "potential": "2012--Lee-Y-Hwang-G-S--Si-GGA"
+    },
+    {
+        "question": "Identify a LAMMPS Stillinger\u2013Weber (SW) parameter set that was explicitly optimized for 2D monolayer silicene (low-buckled honeycomb) and is suitable for MD thermal conductivity calculations. Requirements:\n- Reproduces DFT low-buckled structure: lattice constant \u2248 3.86 \u00c5, Si\u2013Si bond length \u2248 2.28 \u00c5, buckling height \u0394 \u2248 0.44 \u00c5, cohesive energy \u2248 4.6 eV/atom.\n- Matches DFT phonon dispersion for silicene (no imaginary modes along \u0393\u2013M\u2013K\u2013\u0393).\n- Has been validated for Green\u2013Kubo or NEMD thermal conductivity of silicene (room-temperature k on the order of tens of W m\u22121 K\u22121).\nReturn the recommended SW parameterization name, authors and year, DOI/citation, and a link or filename for a LAMMPS pair_style sw potential file formatted for silicene. Note any pitfalls with using bulk-Si SW/Tersoff parameters for silicene and, if multiple silicene-specific SW sets exist (e.g., Jiang et al., Zhang et al.), compare and recommend one.",
+        "potential": "2014--Zhang-X-Xie-H-Hu-M-et-al--Si-1"
+    },
+    {
+        "question": "Which specific Si Tersoff parameter set (author/year and exact name) has been validated for silicene and used in MD/LAMMPS studies that reproduce the collapse of free\u2011standing single\u2011layer silicene nanoribbons at ~300 K while predicting bilayer silicene remains stable? Please cite the original paper(s) demonstrating this behavior (including validation against silicene buckling, phonon dispersion, and thermal stability) and provide the corresponding LAMMPS potential file name/source.",
+        "potential": "2017--Purja-Pun-G-P-Mishin-Y--Si"
+    },
+    {
+        "question": "Identify the modified Stillinger\u2013Weber (mSW) potential for single-crystal silicon used in LAMMPS that doubles the three-body coefficient \u03bb relative to the original 1985 SW set (\u03bb: 21 \u2192 42) to suppress ductility and produce brittle Mode-I crack propagation (e.g., along [110] on a {111} cleavage plane) at 0\u2013300 K. Please provide:\n- The exact parameter set (what changes besides \u03bb, if anything)\n- The canonical literature citation (e.g., Holland & Marder 1998; Hauch, Holland, Marder & Swinney PRL 1999)\n- A LAMMPS-compatible potential file name or source/download link for this mSW (\u03bb\u00d72) parameterization.",
+        "potential": "1999--Hauch-J-A-Holland-D-Marder-M-P-Swinney-H-L--Si"
+    },
+    {
+        "question": "Identify the specific Tersoff-style (bond-order) silicon potential for classical MD that is known to reproduce both the experimental elastic constants (approximately C11 \u2248 165 GPa, C12 \u2248 64 GPa, C44 \u2248 79 GPa at ~300 K) and the melting temperature (Tm \u2248 1687 K). Which modified Tersoff parameterization (e.g., Agrawal\u2013Raff\u2013Komanduri 2002/2003, Erhart\u2013Albe ABOP 2005) best meets these criteria? Please provide the recommended model name/author/year, key reference(s), and any common implementation identifiers (e.g., LAMMPS potential files).",
+        "potential": "2007--Kumagai-T-Izumi-S-Hara-S-Sakai-S--Si"
+    },
+    {
+        "question": "Identify a specific modified Stillinger\u2013Weber (SW) parameterization for elemental silicon that:\n- Stabilizes the Si(111)-(7\u00d77) DAS reconstruction with realistic adatom/rest-atom geometries (heights, bonding, and correct dangling-bond counts),\n- Gives reasonable surface energies and reconstructions for Si(111), Si(100)-(2\u00d71), and Si(110),\n- Preserves bulk properties (a0 \u2248 5.431 \u00c5, Ecoh \u2248 4.63 eV/atom, elastic constants near experiment, sensible melting temperature),\n- Is available for LAMMPS/OpenKIM.\n\nAmong known variants (e.g., Vink et al. 2001 mSW, other SW reparameterizations), which one best meets these criteria, and what are the documented trade-offs? Please include references and, if possible, implementation file names or OpenKIM IDs.",
+        "potential": "1996--Stephenson-P-C-L-Radny-M-W-Smith-P-V--Si"
+    },
+    {
+        "question": "Identify the specific silicon parameter set of the modified Tersoff/bond-order potential that adds a screened Morse-type long-range tail (e.g., the Kumagai\u2013Izumi\u2013Hara\u2013Sakai, 2007 variant) and eliminates abrupt bonding-energy jumps at the cutoff, validated for adatom diffusion on the Si(001)-(2\u00d71) reconstructed surface. Provide the exact name used in LAMMPS (e.g., pair_style tersoff/mod or tersoff/mod/c with the Kumagai Si parameters) and the primary literature citation.",
+        "potential": "1991--Wang-J-Rockett-A--Si"
+    },
+    {
+        "question": "I plan to use LAMMPS to run minima-hopping global searches for bulk silicon tetra-interstitial (I4) clusters. Which empirical interatomic potential and specific parameterization available in LAMMPS best reproduces DFT-calibrated defect energetics (formation/binding energies and relative stabilities of self-interstitials and small interstitial clusters) and remains stable under large atomic rearrangements? Please recommend a concrete choice (e.g., EDIP/Justo-1998, Lenosky MEAM-2000, Erhart\u2013Albe ABOP, Tersoff variants), cite benchmarking studies focused on Si defects (not just bulk properties), provide the exact LAMMPS pair_style and parameter file name, and note best practices for MH (e.g., adding ZBL short-range repulsion and relevant cutoff settings) to avoid unphysical amorphization.",
+        "potential": "2011--Du-Y-A-Lenosky-T-J-Hennig-R-G-et-al--Si"
+    },
+    {
+        "question": "In LAMMPS, which specific silicon EDIP parameterization (e.g., Justo et al. 1998 EDIP-Si vs any revised/reparameterized EDIP) should be used with pair_style edip to accurately model disordered phases (realistic amorphous-Si RDF/angle distribution, density) and crystalline defects (stacking-fault energies, 1/6<112> partial dislocation core structures)? Please cite the recommended parameter set, provide the exact LAMMPS potential file name/pair_coeff line, and any validation or benchmarks versus Tersoff/SW/MEAM showing performance for amorphous Si and partial dislocations.",
+        "potential": "1998--Justo-J-F-Bazant-M-Z-Kaxiras-E-et-al--Si"
+    },
+    {
+        "question": "Identify a published second-nearest-neighbor MEAM (2NN-MEAM) parameter set (LAMMPS library.meam + parameter.meam) that includes Al, Si, Mg, Cu, and Fe simultaneously (suitable for AA6061 composition ranges) and is validated for thermal expansion (\u2248300\u2013800 K) and defect energetics (vacancy/interstitial formation energies and stacking-fault energies) across relevant Al\u2013Si\u2013Mg\u2013Cu\u2013Fe binaries/ternaries; provide the specific parameter set name/citation and download source, and note any known limitations (especially for Fe-containing interactions).",
+        "potential": "2012--Jelinek-B-Groh-S-Horstemeyer-M-F-et-al--Al-Si-Mg-Cu-Fe"
+    },
+    {
+        "question": "For molecular dynamics of undercooled Au\u2013Si (Si\u2013Au) melts undergoing rapid quenching to probe crystallization pathways and critical cooling rates, which published interatomic potential specifically parameterized for the Au\u2013Si alloy is recommended? Please identify the potential type and parameter set (e.g., EAM/MEAM/ADP/ReaxFF) that has been validated to reproduce the Au\u2013Si eutectic temperature/composition, liquid structure, and glass-forming/crystallization behavior, and provide the primary citation and a LAMMPS-ready file name/link.",
+        "potential": "2018--Starikov-S-V-Lopanitsyna-N-Y-Smirnova-D-E-Makarov-S-V--Si-Au"
+    },
+    {
+        "question": "Identify the most accurate Tersoff-parameterized Si\u2013O potential for generating amorphous SiO2 (a\u2011SiO2, vitreous silica) via melt\u2013quench MD in LAMMPS and validating against experiment. Compare available parameter sets (e.g., Munetoh et al., J. Phys. Soc. Jpn. 2007; Watanabe et al. 2012; other Si\u2013O Tersoff variants such as the LAMMPS potentials/SiO.tersoff file) on their ability to reproduce:\n- Room-temperature density \u22482.2 g/cm3\n- Partial RDFs g_SiO, g_OO, g_SiSi with peak positions near 1.60 \u00c5 (Si\u2013O), 2.62 \u00c5 (O\u2013O), 3.08 \u00c5 (Si\u2013Si)\n- Vibrational/phonon DOS (VDOS/PDOS) matching INS/Raman bands around ~400, ~800, and ~1100 cm^-1\n\nPlease provide:\n- Specific LAMMPS file names and pair_style settings (pair_style tersoff, optional ZBL spline if recommended)\n- Literature benchmarks/validation studies comparing these Tersoff parametrizations for a\u2011SiO2 (RDF, structure factor S(q), elastic constants, VDOS)\n- Known limitations (e.g., over-stiff VDOS, incorrect elastic moduli) versus alternatives like BKS, Vashishta, SW\n- Recommended melt\u2013quench protocol for fair comparison (melt ~5000 K, quench rates 10^12\u201310^13 K/s, NPT to \u03c1\u22482.2 g/cm3 at 300 K, system size \u22653000 atoms)\n\nKeywords: LAMMPS, pair_style tersoff, SiO.tersoff, Munetoh potential, Watanabe Si\u2013O Tersoff, a\u2011SiO2, vitreous silica, RDF, VDOS, PDOS, phonon DOS, inelastic neutron scattering.",
+        "potential": "2007--Munetoh-S-Motooka-T-Moriguchi-K-Shintani-A--Si-O"
+    },
+    {
+        "question": "Identify the specific actively learned Atomic Cluster Expansion (ACE) interatomic potential for the Si\u2013O system (SiO2) that:\n- Is compatible with LAMMPS (pair_style pace; accepts .yace/.ace model files)\n- Was trained via active learning to cover crystalline and amorphous silica (e.g., quartz, coesite, stishovite; glass), silica aerogels, and surfaces\n- Has been validated for silica up to ~200 GPa\n- Includes the explicit caveat that it must not be used for high-pressure elemental Si\n\nProvide the exact model name/identifier (e.g., AL-ACE Si\u2013O), repository/DOI or OpenKIM ID, and any LAMMPS usage notes.",
+        "potential": "2024--Erhard-L-C-Rohrer-J-Albe-K-Deringer-V-L--Si-O"
+    },
+    {
+        "question": "Which publicly available machine-learning interatomic potential for the ternary Si\u2013O\u2013C (SiOC) system can accurately model amorphous polymer\u2011derived silicon oxycarbide glass\u2011ceramics via melt\u2013quench MD and predict composition\u2011dependent elastic properties (Young\u2019s/bulk/shear moduli)? Prioritize MLIPs with reactive bonding for Si\u2013O, Si\u2013C, and C\u2013C, validated against DFT/experiment, and usable in LAMMPS/ASE (e.g., GAP, MTP, Deep Potential, ACE/NequIP). Name the specific parameter set/model and provide key citations demonstrating accuracy for stiffness\u2013composition relations.",
+        "potential": "2024--Leimeroth-N-Rohrer-J-Albe-K--Si-O-C"
+    },
+    {
+        "question": "In LAMMPS for crystalline silicon, I need a SNAP-based ML potential with near-DFT accuracy for energies, forces, elastic constants, and phonon dispersion curves and I can accept higher computational cost. According to Zuo et al.\u2019s \u201cPerformance and cost assessment of MLIPs\u201d (JCP 152, 154104, 2020), which specific Si SNAP variant (linear SNAP vs quadratic SNAP/qSNAP) best meets these accuracy targets, and what are the exact LAMMPS model files/OpenKIM ID and pair_style snap settings to use?",
+        "potential": "2020--Zuo-Y-Chen-C-Li-X-et-al--Si-SNAP"
+    }
+]

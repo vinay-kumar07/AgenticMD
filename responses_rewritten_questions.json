@@ -1,0 +1,947 @@
+[
+    {
+        "question": "I need a LAMMPS interatomic potential suitable for pure aluminum in the liquid-to\u2013warm dense regime to compute ionic transport properties via classical MD (no DFT-MD). Target conditions: T \u2248 1,000\u201360,000 K; densities near isochoric \u03c1 \u2248 2.70 g/cm\u00b3 (and, if available, 1\u20133 g/cm\u00b3). Properties of interest: self-diffusion, shear viscosity, and the ionic contribution to thermal conductivity (via Green\u2013Kubo or M\u00fcller\u2013Plathe). Please evaluate and compare the applicability and validation of: (a) EAM/MEAM (e.g., Mishin) parameterizations; (b) charge-transfer potentials like COMB3/ReaxFF; (c) screened Coulomb models (Yukawa) with short-range ZBL; and (d) temperature- and density-dependent effective ion potentials derived from average-atom/pseudoatom methods (e.g., PAMD, Purgatorio) or OF-DFT. For your recommended choice, justify its validity across partial ionization up to ~60 kK and its ability to reproduce structure and transport (with references/benchmarks vs DFT-MD or experiment for Al), and provide LAMMPS specifics: pair_style(s) to use (e.g., table, yukawa, zbl, hybrid/overlay), how to obtain Z*(T,\u03c1) and screening lengths, how to splice ZBL at short range, suggested cutoffs/timesteps, and any caveats for computing heat flux with many-body potentials. Include example input snippets and key citations.",
+        "expected_answer": "2023--Kumar-S-Tahmasbi-H-Ramakrishna-K-et-al--Al",
+        "retrieved_answers": [
+            "2023--Kumar-S-Tahmasbi-H-Ramakrishna-K-et-al--Al",
+            "2015--Choudhary-K-Liang-T-Chernatynskiy-A-et-al--Al"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify the best interatomic potential for MD simulations of aluminum crystallization from an undercooled melt (about 0.6\u20131.0 Tm). Prioritize potentials that accurately reproduce melting-related properties (Tm \u2248 933 K within ~\u00b150 K, latent heat of fusion, volume change on melting, solid\u2013liquid coexistence densities, solid\u2013liquid interfacial free energy, and crystal growth velocity vs undercooling) and realistic liquid structure/transport near Tm (RDF/structure factor matching X-ray/neutron data such as Waseda, self-diffusion, viscosity). Compare leading EAM/MEAM options (e.g., Mishin 1999/2004/2013 Al, Zhou 2004, Grochola 2005, Liu 2004) with recent machine-learned Al potentials (SNAP, GAP, MTP/NNP) that include liquid/coexistence training. Cite benchmarks/literature for melting and liquid properties, note known limitations for nucleation/growth kinetics, and recommend a specific, publicly available potential (with exact LAMMPS file/name) best validated for crystallization from undercooled Al.",
+        "expected_answer": "2008--Mendelev-M-I-Kramer-M-J-Becker-C-A-Asta-M--Al",
+        "retrieved_answers": [
+            "2008--Mendelev-M-I-Kramer-M-J-Becker-C-A-Asta-M--Al",
+            "2010--Mendelev-M-I-Rahman-M-J-Hoyt-J-J-Asta-M--fictional-Al-3"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify the specific classical MD interatomic potential for aluminum that was explicitly parameterized using a finite-temperature thermodynamic fitting approach (free-energy/thermodynamic property matching) to reproduce room-temperature thermoelastic behavior\u2014i.e., accurate second- and third-order elastic constants (SOEC and TOEC), along with related properties such as thermal expansion and heat capacity\u2014at T \u2265 300 K. Provide the potential name and type (EAM/MEAM or similar), the original publication and DOI, and links to parameter files usable in LAMMPS. Include keywords: aluminum Al, thermoelastic constants, third-order elastic constants, anharmonic elasticity, temperature-dependent fitting, quasi-harmonic/Gr\u00fcneisen, thermodynamic inversion.",
+        "expected_answer": "2009--Winey-J-M-Kubota-A-Gupta-Y-M--Al",
+        "retrieved_answers": [
+            "2009--Winey-J-M-Kubota-A-Gupta-Y-M--Al",
+            "2015--Choudhary-K-Liang-T-Chernatynskiy-A-et-al--Al"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify a classical interatomic potential for fcc aluminum that corrects the Ercolessi\u2013Adams (1994) glue model\u2019s low relaxed intrinsic stacking fault energy while preserving comparable surface energies and thermophysical properties (melting point, thermal expansion, elastic constants). Specify the recommended potential (name, authors, year), its reported relaxed gamma_ISF value (target \u2248135\u2013170 mJ/m\u00b2), evidence for accurate surface/thermal properties, and provide a citation and common LAMMPS potential file name if available.",
+        "expected_answer": "2004--Liu-X-Y-Ercolessi-F-Adams-J-B--Al",
+        "retrieved_answers": [
+            "2004--Liu-X-Y-Ercolessi-F-Adams-J-B--Al",
+            "1994--Ercolessi-F-B-Adams-J--Al"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "In molecular dynamics/TTM-MD simulations of femtosecond laser\u2013induced ablation and spallation in aluminum, which specific EAM potential(s) best reproduce both (a) the Al shock Hugoniot (P\u2013us\u2013up and EOS up to ~100\u2013200 GPa, reasonable Gr\u00fcneisen parameter and release isentrope) and (b) realistic melting behavior (Tm \u2248 933 K, latent heat, liquid density, and pressure-dependent melting slope)? Please compare commonly used options (e.g., Mishin 1999/2004, Zhou\u2013Johnson\u2013Wadley 2004, Ercolessi\u2013Adams, Mendelev, Winey\u2013Gupta), summarize validation vs experiment/DFT, note trade-offs affecting spall strength predictions, and provide citations and the corresponding LAMMPS potential file names.",
+        "expected_answer": "2009--Zhakhovskii-V-V-Inogamov-N-A-Petrov-Y-V-et-al--Al",
+        "retrieved_answers": [
+            "2009--Zhakhovskii-V-V-Inogamov-N-A-Petrov-Y-V-et-al--Al",
+            "2008--Mendelev-M-I-Kramer-M-J-Becker-C-A-Asta-M--Al"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify the specific Physically Informed Neural Network (PINN) interatomic potential for elemental aluminum that is validated as a general-purpose, transferable model across solids and liquids. Requirements:\n- Accurately reproduces point/line/planar defect properties (vacancies, interstitials, dislocations, stacking faults), melting behavior, liquid thermodynamics/transport (RDF, diffusion, viscosity), surface energies and liquid surface tension, and crack initiation/propagation.\n- Computationally efficient for large-scale LAMMPS MD.\n\nPlease provide:\n- Exact model name/version and authors (e.g., Mishin group PINN-Al, year), with DOI and a link to downloadable LAMMPS-compatible files.\n- Brief description of the DFT training set (phases/structures covered, volumes/strains, surfaces, liquids, defects).\n- Published validation/benchmarks vs DFT and experiment (elastic constants, vacancy/SF energies, melting point, liquid properties, surface tension, fracture/crack growth), and comparisons to EAM/MEAM, GAP, MTP, SNAP, BP-NNP.\n- Known limitations or failure modes, and any guidance on time step/cutoff and recommended temperature/pressure ranges.",
+        "expected_answer": "2020--Purja-Pun-G-P-Yamakov-V-Hickman-J-et-al--Al",
+        "retrieved_answers": [
+            "2020--Purja-Pun-G-P-Yamakov-V-Hickman-J-et-al--Al",
+            "2025--Meng-FS-Shinzato-S-Matsubara-K-et-al--Fe-C-H"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "For aluminum (fcc Al) simulations where I must compute thermodynamic quantities that require reliable per-atom energies (e.g., surface melting temperatures, free energies) in addition to mechanical response (stress\u2013strain), which machine-learning interatomic potential should be avoided because it is force-only (predicts forces without an explicit energy model and does not output atomic energies)?",
+        "expected_answer": "2017--Botu-V-Batra-R-Chapman-J-Ramprasad-R--Al",
+        "retrieved_answers": [
+            "2009--Winey-J-M-Kubota-A-Gupta-Y-M--Al",
+            "2015--Choudhary-K-Liang-T-Chernatynskiy-A-et-al--Al"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify Al\u2013Cu interatomic potentials with explicit Al\u2013Cu cross-interaction parameters (for LAMMPS) that have been validated to reproduce the \u03b8 (Al2Cu, tetragonal I4/mcm) and \u03b8\u2032 (Al2Cu, tetragonal I4/mmm) precipitates\u2019 lattice parameters, 0 K formation enthalpies, and their correct relative stability when temperature effects are included (up to ~600\u00b0C). Compare EAM vs 2NN-MEAM vs newer MLIPs, citing specific parameterizations (e.g., Zhou\u2013Johnson 2004 EAM alloy, Kim/Baskes 2NN\u2011MEAM Al\u2013Cu, Mendelev/Mishin variants, OpenKIM/NIST models), report quantitative errors versus DFT/experiment for \u03b8/\u03b8\u2032, note temperature range of reliability and known limitations, and provide LAMMPS file names/DOIs or OpenKIM IDs.",
+        "expected_answer": "2011--Apostol-F-Mishin-Y--Al-Cu",
+        "retrieved_answers": [
+            "2022--Mahata-A-Mukhopadhyay-T-Asle-Zaeem-M--Al-Cu",
+            "2008--Mendelev-M-I-Kramer-M-J-Becker-C-A-Asta-M--Al"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Rewritten query: Identify an interatomic potential for classical MD that can explicitly handle bond breaking/formation and charge transfer to model hydrogen in Al\u2013Cu alloys, including: (i) H2 dissociative adsorption and chemisorption on Al(111), Cu(111), and Al\u2013Cu alloy surfaces; (ii) H diffusion and trapping in bulk Al/Cu and at Al\u2013Cu intermetallics (e.g., Al2Cu/\u03b8\u2032 precipitates); and (iii) Al\u2013Cu\u2013H thermodynamics and phase stability (hydride formation, solubility) over 300\u2013800 K and ~1\u2013100 bar. Prefer LAMMPS-compatible reactive potentials with validated Al\u2013Cu\u2013H cross-interactions (e.g., ReaxFF or COMB3); alternatively, MEAM/2NN\u2011MEAM or MLIPs trained to DFT that reproduce H2 dissociation barriers and adsorption energies. Which published parameter sets meet these requirements and are available for download?",
+        "expected_answer": "2018--Zhou-X-W-Ward-D-K-Foster-M-E--Al-Cu-H",
+        "retrieved_answers": [
+            "2022--Mahata-A-Mukhopadhyay-T-Asle-Zaeem-M--Al-Cu",
+            "2018--Zhou-X-W-Ward-D-K-Foster-M-E--Al-Cu-H"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Which Ni\u2013Al interatomic potential (Embedded-Atom Method) was explicitly developed for Ni-based superalloys to model \u03b3-Ni (fcc Ni with Al) and \u03b3\u2032-Ni3Al (L12), reproducing correct thermodynamics and melting temperatures and validated for dislocation migration, elastic constants, and stacking-fault energies? Please identify the specific potential (authors/year, e.g., Purja Pun & Mishin 2012 EAM) and its citation or LAMMPS file name.",
+        "expected_answer": "2024--Borovikov-V-V-Mendelev-M-I-Zarkevich-N-A-et-al--Ni-Al",
+        "retrieved_answers": [
+            "2004--Mishin-Y--Ni-Al",
+            "2022--Mahata-A-Mukhopadhyay-T-Asle-Zaeem-M--Al-Ni"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify Ni\u2013Al\u2013Cr interatomic potentials (EAM/MEAM/ADP) validated for \u03b3/\u03b3\u2032 Ni-based superalloys that accurately reproduce planar-fault energetics and Cr segregation effects in \u03b3\u2032-Ni3Al (L12), including APB(111)/(100), SISF/SESF/CSF, and {111} twin boundary energies. Specifically seek potentials shown to capture Cr segregation to superlattice stacking faults and its impact on microtwin nucleation/growth. Provide citations and accessible LAMMPS/OpenKIM potential files. Keywords: \u201cNi3Al \u03b3\u2032\u201d, \u201csuperlattice stacking fault (SISF/SESF)\u201d, \u201cAPB energy\u201d, \u201ctwin boundary\u201d, \u201cchromium segregation\u201d, \u201cmicrotwin\u201d, \u201cEAM\u201d, \u201cMEAM\u201d, \u201cNi\u2013Al\u2013Cr\u201d.",
+        "expected_answer": "2024--Borovikov-V-V-Mendelev-M-I-Smith-T-M-Lawson-J-W--Ni-Al-Cr",
+        "retrieved_answers": [
+            "2003--Lee-B-J-Shim-J-H-Baskes-M-I--Al",
+            "2024--Borovikov-V-V-Mendelev-M-I-Smith-T-M-Lawson-J-W--Ni-Al-Cr"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify interatomic potentials for LAMMPS (EAM/MEAM/ADP) that accurately model the B2 (CsCl) \u2192 L1_0 (CuAu-type) martensitic transformation in Ni\u2013Al\u2013Co. Requirements:\n- Ternary parameterization with consistent Ni\u2013Al, Ni\u2013Co, and Al\u2013Co cross-interactions (single ternary potential preferred; otherwise a validated cross-compatible binary set).\n- Reproduces energy ordering and Bain path between B2 and L1_0, L1_0 tetragonality (c/a), elastic constants, phonon stability, and stacking-fault/antiphase-boundary energies.\n- Predicts reasonable composition/temperature dependence of phase stability and transformation (e.g., 45\u201355 at.% Al with 0\u201320 at.% Co, 300\u20131200 K), consistent with DFT/experimental data (phase diagram, ordering temperatures, Ms).\nPlease provide specific potential names/files (e.g., .eam.alloy or 2NN\u2011MEAM parameter sets), LAMMPS pair_style compatibility, and citation/DOI/download links (e.g., Mishin-type Ni\u2013Al EAM with Co extensions, 2NN\u2011MEAM sets including Ni/Al/Co).",
+        "expected_answer": "2015--Purja-Pun-G-P-Yamakov-V-Mishin-Y--Ni-Al-Co",
+        "retrieved_answers": [
+            "2022--Mahata-A-Mukhopadhyay-T-Asle-Zaeem-M--Al-Ni",
+            "2022--Mahata-A-Mukhopadhyay-T-Asle-Zaeem-M--Al-Cu"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify a single, transferable second-nearest-neighbor MEAM (2NN-MEAM) parameter library that provides consistent cross-interactions for Cu, Ti, Ni, Cr, Co, Al, Fe, and Mn, suitable for simulating dislocation cores, stacking-fault energies, and mechanical behavior in complex concentrated/high-entropy alloys (e.g., CoCrFeMnNi) using LAMMPS/OpenKIM. Accurate temperature-dependent calibration is not required. Which MEAM potential suite/database fits these criteria?",
+        "expected_answer": "2025--Sharifi-H-Wick-C-D--Fe-Mn-Ni-Ti-Cu-Cr-Co-Al",
+        "retrieved_answers": [
+            "2022--Mahata-A-Mukhopadhyay-T-Asle-Zaeem-M--Al-Ni",
+            "2022--Mahata-A-Mukhopadhyay-T-Asle-Zaeem-M--Al-Cu"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify a published, LAMMPS-compatible angular-dependent Al\u2013H interatomic potential (e.g., 2NN-MEAM/MEAM or ADP, possibly ReaxFF) that has been validated for dilute H in fcc Al\u2014specifically reproducing (i) solution energies and correct site preference (tetrahedral lower than octahedral), (ii) H migration barrier along the T\u2013O\u2013T path \u22480.15\u20130.25 eV, and (iii) bulk Al lattice/elastic properties; cite the exact parameter set (authors/year/DOI) and where to obtain the files.",
+        "expected_answer": "2010--Apostol-F-Mishin-Y--Al-H",
+        "retrieved_answers": [
+            "2010--Apostol-F-Mishin-Y--Al-H",
+            "2003--Lee-B-J-Shim-J-H-Baskes-M-I--Al"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify a published, open-source machine-learning interatomic potential for the Ti\u2013Al\u2013V system (covering pure Ti, Ti\u2013Al, Ti\u2013V; Ti\u20116Al\u20114V/Ti\u201164) that achieves near-DFT accuracy and has been validated to: (1) reproduce the \u03b1\u2194\u03b2 (hcp\u2194bcc) transition in Ti, (2) capture \u03b1\u2194D019 (Ti3Al) ordering in Ti\u2013Al, and (3) represent \u03b2+\u03c9 coexistence in Ti\u2013V (\u03c9 phase stability under alloying/pressure). Prefer potentials usable in LAMMPS/ASE (e.g., GAP, ACE/PACE, MTP, DeepMD/DP\u2011GEN, SNAP) with available parameter files, citations/DOIs, and validation showing accurate energies, elastic constants, phonons, defect/stacking-fault energies, and reported transition temperatures/phase stabilities for microstructure-scale MD of Ti\u20116Al\u20114V.",
+        "expected_answer": "2025--Nitol-M-S-Mishra-A-Xu-S-Fensin-S-J--Al-Ti-V",
+        "retrieved_answers": [
+            "2025--Nitol-M-S-Mishra-A-Xu-S-Fensin-S-J--Al-Ti-V",
+            "2003--Zope-R-R-Mishin-Y--Al"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify a LAMMPS-compatible carbon interatomic potential with native uncertainty quantification (predictive variance) so I can:\n- compute graphene phonon dispersion with error bars, and\n- detect out-of-training (OOD) structures during an NPT MD run.\n\nWhich specific carbon model should I use (e.g., GAP/QUIP carbon such as the Deringer\u2013Cs\u00e1nyi GAP-C or a Bayesian ACE model), which LAMMPS pair_style enables it, and how do I output per-atom/force uncertainty (GP variance/sigma) for OOD monitoring? Include recommended model file names/links and example LAMMPS input settings to enable and dump uncertainties.",
+        "expected_answer": "2020--Wen-M-Tadmor-E-B--C-v2",
+        "retrieved_answers": [
+            "2015--Zhou-X-W-Ward-D-K-Foster-M-E--C",
+            "2015--Zhou-X-W-Ward-D-K-Foster-M-E--C-Cu"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify the best interatomic potential (or intralayer+interlayer combination) for classical MD of multilayer graphene with vacancies that can accurately predict both lattice thermal conductivity and interlayer friction. The potential must (1) capture in-plane sp2 C\u2013C bonding, bond breaking/reconstruction around vacancies, and phonon dispersion relevant to thermal transport; (2) include registry-dependent van der Waals interlayer forces to reproduce interlayer binding, AB/AA energy corrugation, sliding barriers, and shear; and (3) be available in LAMMPS. Compare and justify among AIREBO/AIREBO-M/REBO, optimized Tersoff, LCBOPII, ReaxFF, and hybrid schemes that pair an intralayer carbon potential (e.g., REBO or AIREBO-M) with a registry-dependent interlayer model such as Kolmogorov\u2013Crespi (KC), DRIP, or ILP. Prioritize options validated against DFT/experiment for vacancy energetics, graphene thermal conductivity, and interlayer friction, and recommend the most appropriate choice.",
+        "expected_answer": "2019--Wen-M-Tadmor-E-B--C",
+        "retrieved_answers": [
+            "2015--Zhou-X-W-Ward-D-K-Foster-M-E--C",
+            "2015--Zhou-X-W-Ward-D-K-Foster-M-E--C-Cu"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify the specific carbon\u2013copper (C\u2013Cu) interatomic potential that was explicitly developed for molecular dynamics of graphene CVD on Cu at temperatures above copper\u2019s experimental melting point without melting the Cu substrate. Provide the potential\u2019s name/type (e.g., bond-order/Morse/MEAM/ReaxFF), the original citation (authors, year, journal), and any common LAMMPS implementation or parameter file names.",
+        "expected_answer": "2015--Zhou-X-W-Ward-D-K-Foster-M-E--C-Cu",
+        "retrieved_answers": [
+            "2015--Zhou-X-W-Ward-D-K-Foster-M-E--C-Cu",
+            "2021--Agrawal-A-Mirzaeifar-R--Cu-C"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "For MD/MC simulations of the diamond\u2194graphite phase transformation where accurate long-range dispersion is required to bind graphite layers, which carbon interatomic potential is recommended (e.g., LCBOP/LCBOPII, AIREBO/AIREBO-M, ReaxFF variants, ML potentials like GAP), and why? Please compare their ability to:\n- Reproduce graphite interlayer spacing (~3.35 \u00c5) and exfoliation energy (~0.32\u20130.36 J/m^2)\n- Capture sp2\u2194sp3 rehybridization, bond breaking/formation, and phase stability across T\u2013P\n- Predict transformation pathways/barriers and elastic/phonon properties\nInclude known limitations, validated parameter sets, benchmark references, and LAMMPS/MC compatibility; exclude potentials without explicit vdW terms (e.g., plain Tersoff/REBO) unless combined with an interlayer potential.",
+        "expected_answer": "2003--Los-J-H-Fasolino-A--C",
+        "retrieved_answers": [
+            "2015--Zhou-X-W-Ward-D-K-Foster-M-E--C",
+            "2015--Zhou-X-W-Ward-D-K-Foster-M-E--C-Cu"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify interatomic potentials for Pd\u2013C that are validated for modeling the adsorption/adhesion of 2\u20135 nm Pd nanoclusters (icosahedral, decahedral, cuboctahedral) on monolayer graphene in large-scale classical MD (LAMMPS). Prioritize non-reactive, computationally efficient models compatible with Pd\u2013Pd EAM/MEAM and C\u2013C AIREBO/LCBOP/Tersoff, but also include reactive options. For each candidate (e.g., Pd/C/H/O ReaxFF, COMB3, MEAM with Pd\u2013C cross terms, or Morse/LJ Pd\u2013C fits to DFT), provide: parameter sets and LAMMPS pair_style compatibility; validation against DFT/experiment for Pd/graphene (binding/adhesion energy, equilibrium separation, registry dependence, wetting behavior) in the 300\u2013800 K range; known limitations (over/underbinding, lack of charge transfer/dispersion, spurious carbide formation); and links to parameter files or key references.",
+        "expected_answer": "2020--Jeong-G-U-Lee-B-J--Pd-C",
+        "retrieved_answers": [
+            "2020--Jeong-G-U-Lee-B-J--Pd-C",
+            "2020--Jeong-G-U-Lee-B-J--Pt-C"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify the interatomic potential (and exact parameter set) for Ti\u2013Al\u2013C that best reproduces Ti3AlC2 (312 MAX phase) deformation mechanisms\u2014basal slip on (0001)<11-20>, kink-band formation under compression, and strong plastic anisotropy\u2014in molecular dynamics. Prefer parameterizations validated against DFT/experiment for lattice constants, elastic constants, generalized stacking-fault (GSF) energies on (0001), and dislocation behavior. Specify the recommended potential family (e.g., 2NN-MEAM, MEAM, ReaxFF, machine-learning potential), the authors/year (e.g., Ti\u2013Al\u2013C 2NN-MEAM by Lee/Baskes; ReaxFF Ti/Al/C sets; MLIP/GAP/SNAP for MAX phases), LAMMPS file names if available, and key citations demonstrating correct basal slip and kink-band reproduction.",
+        "expected_answer": "2021--Plummer-G-Rathod-H-Srivastava-A-et-al--Ti-Al-C",
+        "retrieved_answers": [
+            "2019--Plummer-G-Tucker-G-J--Ti-Al-C",
+            "2019--Plummer-G-Tucker-G-J--Ti-Al-C"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Which interatomic potential parameterization is best for classical MD simulations of irradiation damage in Ti3AlC2 (MAX phase)? Specifically, identify Ti\u2013Al\u2013C potentials (MEAM/COMB3/ReaxFF/BOP, etc.) that:\n- Are parameterized for Ti3AlC2 and the full Ti\u2013Al\u2013C interactions\n- Include ZBL short-range splining for high-energy collisions (PKA \u2248 1\u201350 keV)\n- Reproduce DFT-calibrated defect properties (vacancy/interstitial/antisite formation energies on Ti/Al/C sublattices, threshold displacement energies, key migration barriers)\n- Have been validated in displacement-cascade or radiation-tolerance studies (300\u20131000 K)\nPlease provide citations and, if available, LAMMPS-ready parameter files.",
+        "expected_answer": "2019--Plummer-G-Tucker-G-J--Ti-Al-C",
+        "retrieved_answers": [
+            "2019--Plummer-G-Tucker-G-J--Ti-Al-C",
+            "2019--Plummer-G-Tucker-G-J--Ti-Al-C"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "For classical MD (LAMMPS) simulations of thermal transport across lateral graphene/h\u2011BN stripe superlattices and embedded h\u2011BN dots in graphene (comparing zigzag vs armchair interfaces), which Tersoff potential provides reliable B\u2013C and N\u2013C cross interactions? Please recommend a specific, validated BCN Tersoff parameter set for phonons/thermal transport at graphene\u2013hBN interfaces (reference and LAMMPS file name), and clarify whether I should use a unified B\u2013C\u2013N fit (e.g., Kinaci\u2013Haskins\u2013Sevik\u2013\u00c7a\u011fin 2012, BNC.tersoff) versus mixing a carbon-only set (e.g., Lindsay\u2013Broido) with a BN set. Include any known caveats for edge/interface energies relevant to zigzag vs armchair comparisons.",
+        "expected_answer": "2012--Kinaci-A-Haskins-J-B-Sevik-C-Cagin-T--B-N-C",
+        "retrieved_answers": [
+            "2012--Kinaci-A-Haskins-J-B-Sevik-C-Cagin-T--B-N-C",
+            "2014--Zhang-X-Xie-H-Hu-M-et-al--Si-2"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify a machine-learning interatomic potential for the Fe\u2013C system that is validated for bcc \u03b1-Fe with dilute interstitial carbon and suitable for finite-temperature MD of 1/2<111> screw-dislocation mobility, including C-decorated core structures. Prioritize models (e.g., GAP, MTP, ACE, SNAP, DP, HDNNP) trained to DFT on Fe\u2013C configurations relevant to dislocations (core structures, C binding/migration near cores, point defects) rather than on pure carbon phases, with demonstrated accuracy for Peierls barrier, kink-pair energetics, and C\u2013dislocation drag, and with ready-to-use implementations in LAMMPS/QUIP/DeePMD. Provide specific candidate potentials, their training set scope, validation on dislocations, and links/DOIs for download.",
+        "expected_answer": "2024--Meng-F-S-Shinzato-S-Zhang-S-et-al--Fe-C-BNNP",
+        "retrieved_answers": [
+            "2024--Meng-F-S-Shinzato-S-Zhang-S-et-al--Fe-C-DP",
+            "2022--Allera-A-Ribeiro-F-Perez-M-Rodney-D--Fe-C"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Which specific hybrid Fe\u2013C EAM/ADP potential should I use in LAMMPS to model carbon-induced strengthening in bcc iron that (i) reproduces the compact, non-degenerate 1/2<111> screw dislocation core, (ii) yields a realistic Peierls barrier/Peierls stress (~0.9\u20131.1 GPa) for screw glide, and (iii) matches DFT-calibrated C solution, migration, and C\u2013screw binding energies? Please identify the recommended potential (e.g., the Itakura Fe ADP combined with Hepburn\u2013Ackland Fe\u2013C as used by Maresca & Curtin), include the key citation(s), and provide the LAMMPS potential file name/source location.",
+        "expected_answer": "2022--Allera-A-Ribeiro-F-Perez-M-Rodney-D--Fe-C",
+        "retrieved_answers": [
+            "2022--Allera-A-Ribeiro-F-Perez-M-Rodney-D--Fe-C",
+            "2024--Meng-F-S-Shinzato-S-Zhang-S-et-al--Fe-C-DP"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify an Fe\u2013C MEAM (preferably 2NN\u2011MEAM) interatomic potential specifically validated for theta\u2011Fe3C (cementite, Pnma) that accurately reproduces:\n- elastic constants Cij at 0\u2013300 K,\n- low\u2011index surface energies (e.g., {010}, {100}, {001}),\n- formation enthalpy of Fe3C,\nand maintains Fe3C stability to enable a two\u2011phase coexistence melting/decomposition simulation. Provide the recommended parameterization (authors/year/DOI), where to obtain LAMMPS meam/meam/c parameter files, and summarize published benchmarks versus experiment/DFT for these properties. Note any known limitations (e.g., cementite high\u2011T stability, incongruent melting, graphite/diamond energetics) that could affect elastic constants, surfaces, or two\u2011phase MD results.",
+        "expected_answer": "2014--Liyanage-L-S-I-Kim-S-G-Houze-J-et-al--Fe-C",
+        "retrieved_answers": [
+            "2014--Liyanage-L-S-I-Kim-S-G-Houze-J-et-al--Fe-C",
+            "2019--Aslam-I-Baskes-M-I-Dickel-D-E-et-al--Fe-Mn-Si-C"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify publicly available Atomic Cluster Expansion (ACE) potentials compatible with LAMMPS (pair_style pace) for reactive C/H systems suitable for shock MD of methane, benzene, and condensed carbon up to ~100 GPa and 3000\u20138000 K. Specifically:\n- Name the CH and C-only ACE parameterizations (file names/repo links) trained on high-P/T DFT data (compressed solids, liquids, dissociated hydrocarbons; graphite/diamond/melt) and validated for EOS/Hugoniot or phase transitions.\n- Provide their basis settings (nu_max, l_max, n_max), cutoff, inclusion of long-range terms, and reported accuracy/stability in nonequilibrium NVE shock runs.\n- Note performance/scalability in LAMMPS for 1e5\u20131e6 atoms.\nIf no ACE model meets these high-P/T reactive requirements, state that explicitly and recommend the closest available ACE (e.g., pure carbon) and best-practice guidance or datasets to train a CH ACE for shocks with PACE.",
+        "expected_answer": "2024--Willman-J-T-Perriot-R-Ticknor-C--C-H",
+        "retrieved_answers": [
+            "2024--Willman-J-T-Perriot-R-Ticknor-C--C-H",
+            "2008--Chenoweth-K-van-Duin-A-C-T-Goddard-W-A--C-H-O"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Which specific ReaxFF parameterization (citation and ffield filename) is recommended for LAMMPS reax/c simulations of graphene, carbon nanotubes, and fullerenes in C/H/O/N environments that has published validation for sp2-carbon properties\u2014graphene phonon dispersion (ZA/TA/LA), in-plane elastic constants, and tensile fracture behavior\u2014while supporting reactions with H, O, and N? Please note if the ReaxFF-lg (long-range vdW) variant is required for layered/curved carbon and any known limitations of common CHO/CHON sets (e.g., Chenoweth 2008 CHO, Mueller 2010 CH, later CHON updates).",
+        "expected_answer": "2022--Fthenakis-Z-G-Petsalakis-I-D-Tozzini-V-Lathiotakis-N-N--C-H-O-N",
+        "retrieved_answers": [
+            "2022--Fthenakis-Z-G-Petsalakis-I-D-Tozzini-V-Lathiotakis-N-N--C-H-O-N",
+            "2008--Chenoweth-K-van-Duin-A-C-T-Goddard-W-A--C-H-O"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "For classical MD of fracture and fatigue (bond scission, crack growth under cyclic loading) in saturated hydrocarbon polymers such as polyethylene, which reactive interatomic potential is most appropriate when only sp3 C\u2013C/C\u2013H chemistry must be accurate (no need for unsaturated hydrocarbons or graphite/diamond)? Please compare AIREBO/REBO/AIREBO-M vs ReaxFF variants in terms of validation for alkanes/polyethylene, ability to model bond breaking/formation and van der Waals/torsions, known limitations in fracture mechanics, computational cost, and LAMMPS support (pair_style names and recommended parameter files).",
+        "expected_answer": "2014--Nouranian-S-Tschopp-M-A-Gwaltney-S-R-et-al--CH",
+        "retrieved_answers": [
+            "2008--Chenoweth-K-van-Duin-A-C-T-Goddard-W-A--C-H-O",
+            "2022--Allera-A-Ribeiro-F-Perez-M-Rodney-D--Fe-C"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Which Si\u2013C interatomic potential is recommended for MD simulations of radiation damage in cubic \u03b2-SiC (3C-SiC) that require realistic short-range repulsion and accurate threshold displacement energies? Please identify a parameterization that:\n- Implements an explicit ZBL (Ziegler\u2013Biersack\u2013Littmark) repulsive correction via a smooth spline/merge at short separations (~0.5\u20131.2 \u00c5),\n- Reproduces Ed values close to experiment/DFT (Ed_C \u2248 18\u201325 eV, Ed_Si \u2248 30\u201340 eV),\n- Has been validated in displacement-cascade simulations,\nand provide the canonical citation and (if available) LAMMPS files. Examples to consider include Erhart\u2013Albe ABOP (2005), Gao\u2013Weber Tersoff\u2013ZBL (1997), Justo et al. EDIP\u2013ZBL (2000/2001), and 2NN-MEAM\u2013ZBL (Lee\u2013Baskes).",
+        "expected_answer": "1998--Devanathan-R-Diaz-de-la-Rubia-T-Weber-W-J--Si-C",
+        "retrieved_answers": [
+            "1998--Devanathan-R-Diaz-de-la-Rubia-T-Weber-W-J--Si-C",
+            "1998--Devanathan-R-Diaz-de-la-Rubia-T-Weber-W-J--Si-C"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "I want to compute the single\u2011crystal elastic constants (C11, C12, C13, C33, C44, C66) of hexagonal close\u2011packed beryllium using LAMMPS via small\u2011strain calculations. Which validated interatomic potentials in the NIST Interatomic Potentials Repository or OpenKIM are specifically parameterized for hcp Be and known to reproduce its lattice parameters, cohesive energy, and elastic constants at 0 K or 300 K (e.g., EAM, MEAM)? Please list recommended models with their exact names/IDs, primary citations, and example LAMMPS pair_style/pair_coeff lines. Also explain why a universal shifted Lennard\u2011Jones potential is inappropriate for Be (e.g., it is a generic pairwise model not fitted to Be, lacks many\u2011body metallic bonding, and cannot capture hcp stability, c/a ratio, and elastic anisotropy), and summarize expected errors if LJ were used.",
+        "expected_answer": "Agrawal et al. (2013) EAM for Be",
+        "retrieved_answers": [
+            "2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be",
+            "2007--Vashishta-P-Kalia-R-K-Nakano-A-Rino-J-P--Si-C"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Which interatomic potential is best for modeling point defects in alpha-hcp beryllium (Be) with accuracy validated against DFT? Please compare available EAM/MEAM/BOP and modern ML potentials (e.g., GAP, SNAP, MTP) on their ability to reproduce DFT benchmarks for: (1) monovacancy formation and migration energies, (2) self-interstitial formation energies, stable configurations (octahedral, tetrahedral, crowdion), and migration barriers, and (3) any defect-induced changes to lattice/elastic properties. For each candidate, provide the parameterization/citation, OpenKIM and/or LAMMPS IDs, and reported errors versus DFT at 0 K (and finite T if available). Conclude with a recommendation of the most reliable potential for vacancy and interstitial studies in Be.",
+        "expected_answer": "Agrawal et al. (2013) EAM for Be",
+        "retrieved_answers": [
+            "2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be",
+            "2003--Lee-B-J-Shim-J-H-Baskes-M-I--Al"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify interatomic potentials for elemental beryllium that were explicitly validated to reproduce lattice (cohesive) energies across multiple crystal structures\u2014at minimum hcp and bcc (preferably also fcc)\u2014including published comparisons of energy\u2013volume (equation-of-state) curves and correct energy ordering versus DFT/experiment. Specify the potential name/type (e.g., EAM/MEAM/ML), authors/year, parameter set or OpenKIM ID, and the validation citation.",
+        "expected_answer": "Agrawal et al. (2013) EAM for Be",
+        "retrieved_answers": [
+            "2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be",
+            "2008--Mendelev-M-I-Kramer-M-J-Becker-C-A-Asta-M--Al"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify interatomic potentials for bulk hcp beryllium that match or outperform published MEAM parameterizations (e.g., Lee 2003; Kim 2011; Liyanage 2014) on key bulk properties while being computationally cheaper than MEAM in LAMMPS. Specifically:\n- Target properties: lattice constants (a, c/a), cohesive energy, elastic constants (C11, C12, C13, C33, C44), bulk modulus, phonon dispersion, vacancy and stacking-fault energies.\n- Candidate models: EAM (including eam/alloy), ADP (angular-dependent EAM), or other low-cost classical potentials (exclude ML/ReaxFF unless demonstrably faster than MEAM).\n- Deliverables: which specific Be potential(s) satisfy this accuracy\u2013cost tradeoff, with citations, parameter file names/ids (LAMMPS and OpenKIM), quantitative error versus experiment/DFT, and runtime comparisons (e.g., time per atom-step or relative speed vs pair_style meam/c).",
+        "expected_answer": "Agrawal et al. (2013) EAM for Be",
+        "retrieved_answers": [
+            "2003--Lee-B-J-Shim-J-H-Baskes-M-I--Al",
+            "2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify published interatomic potentials for crystalline beryllium (hcp Be) that employ a long real-space cutoff of approximately 5 \u00c5 (\u22654.8\u20135.5 \u00c5), sufficient to include about the eighth neighbor shell at 0 K (a \u2248 2.285 \u00c5, c/a \u2248 1.568). Which Be potentials available for LAMMPS (EAM, 2NN-MEAM/MEAM, BOP, Tersoff, ReaxFF) have r_cut/r_out \u2248 5 \u00c5, and what are their exact cutoff values, parameter file names, and primary references? Please note what properties they were fitted to (e.g., elastic constants, phonons, stacking faults) and any known issues with shorter-cutoff Be potentials (~3.5\u20134.5 \u00c5).",
+        "expected_answer": "Agrawal et al. (2013) EAM for Be",
+        "retrieved_answers": [
+            "2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be",
+            "2006--Brommer-P-Gahler-F--Al-Ni-Co-b"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify the LAMMPS-ready interatomic potential (and exact parameter set/file) specifically parameterized for the Be\u2013O system to model oxygen atom/ion irradiation of beryllium surfaces (e.g., Be(0001)) and early BeO oxide nucleation/growth in reactive MD. Requirements: handles Be\u2013Be/Be\u2013O/O\u2013O interactions, bond breaking/formation and charge transfer (reactive, variable-charge), includes ZBL short-range splining for 10\u2013200 eV sputtering collisions, and reproduces BeO formation/surface energies and O2 dissociation on Be. Provide the potential name (e.g., COMB3 or ReaxFF), the Be\u2013O parameterization, implementation/parameter file for LAMMPS, and the primary citation validating it for plasma\u2013surface interaction or oxidation of Be (fusion/ITER context).",
+        "expected_answer": "Byggm\u00e4star et al. (2018) Be-O bond-order (Tersoff/ZBL)",
+        "retrieved_answers": [
+            "2018--Byggmastar-J-Hodille-E-A-Ferro-Y-Nordlund-K--Be-O",
+            "2015--Choudhary-K-Liang-T-Chernatynskiy-A-et-al--Al-O"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Which LAMMPS interatomic potentials for Be\u2013O have published validation for BeO\u2019s elastic and thermal properties, particularly in low-dimensional forms (nanotubes and 2D nanosheets)? Please compare Buckingham+Coulomb potentials (with/without O core\u2013shell polarization; e.g., Lewis\u2013Catlow/GULP parameter sets) versus variable\u2011charge/reactive options (COMB3, ReaxFF), and provide citations, LAMMPS pair_style names/parameter files, and example inputs known to reproduce bulk BeO lattice constants, elastic constants, phonon dispersion, and thermal conductivity. Also note any caveats on transferability to nanotubes/nanosheets and required settings (partial charges, polarization model, and long\u2011range electrostatics such as PPPM).",
+        "expected_answer": "Byggm\u00e4star et al. (2018) Be-O bond-order (Tersoff/ZBL)",
+        "retrieved_answers": [
+            "2018--Byggmastar-J-Hodille-E-A-Ferro-Y-Nordlund-K--Be-O",
+            "2015--Choudhary-K-Liang-T-Chernatynskiy-A-et-al--Al-O"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify published interatomic potentials for BeO (beryllium\u2013oxygen) suitable for high-energy impact/radiation-damage MD (e.g., PKA energies ~1\u2013100 keV) that explicitly incorporate a Ziegler\u2013Biersack\u2013Littmark (ZBL) short-range repulsive correction via a spline/join at small r for Be\u2013Be, Be\u2013O, and O\u2013O pairs. For each potential (e.g., Buckingham+ZBL, Tersoff/ZBL, SW/ZBL, COMB3 with ZBL), provide the parameterization name/authors and year, joining function and cutoff radii, intended energy range, validation notes (ballistic collisions/defect production), and availability in LAMMPS or OpenKIM, with citations.",
+        "expected_answer": "Byggm\u00e4star et al. (2018) Be-O bond-order (Tersoff/ZBL)",
+        "retrieved_answers": [
+            "2018--Byggmastar-J-Hodille-E-A-Ferro-Y-Nordlund-K--Be-O",
+            "2015--Choudhary-K-Liang-T-Chernatynskiy-A-et-al--Al"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "In LAMMPS, I\u2019m using the Be\u2013O interatomic potential file (e.g., potentials/BeO.tersoff) but I want to run a pure Be simulation by keeping only the Be\u2013Be terms. Which publication should be cited for the Be\u2013Be interaction parameters? Specifically:\n- What is the original source of the Be\u2013Be parameters embedded in this Be\u2013O file (as indicated in the file header/comments)?\n- Should I cite the Be\u2013O parameterization paper that bundles Be\u2013Be/Be\u2013O/O\u2013O, or the original Be\u2013Be potential reference the file borrowed from?\nPlease provide the canonical citation(s) for the Be\u2013Be subset used in this file.",
+        "expected_answer": "Byggm\u00e4star et al. (2018) Be-O bond-order (Tersoff/ZBL)",
+        "retrieved_answers": [
+            "2018--Byggmastar-J-Hodille-E-A-Ferro-Y-Nordlund-K--Be-O",
+            "2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "For a LAMMPS potential file named \u201cBe-O.tersoff.zbl\u201d (Be\u2013O Tersoff with a ZBL short-range correction), which pair_style should be specified (e.g., pair_style tersoff/zbl vs using hybrid/overlay with zbl), and what is the exact pair_coeff syntax to load it? Include any LAMMPS version/package requirements and how to confirm from the file header which style/format it expects.",
+        "expected_answer": "Byggm\u00e4star et al. (2018) Be-O bond-order (Tersoff/ZBL)",
+        "retrieved_answers": [
+            "2007--Kumagai-T-Izumi-S-Hara-S-Sakai-S--Si",
+            "1988--Tersoff-J--Si-b"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Recommend an interatomic potential (and, if available, a Be parameter set) that accurately reproduces the beryllium dimer (Be2) ground-state properties\u2014equilibrium bond length re \u2248 2.45 \u00c5 and dissociation energy De \u2248 0.11\u20130.12 eV\u2014while using a smooth, energy- and force-continuous cutoff suitable for MD (e.g., LAMMPS). Please specify:\n- The functional form (e.g., Morse with shifted-force or polynomial/cosine taper, Buckingham with smoothing, ReaxFF) and why it can fit a diatomic.\n- Any validated Be2 parameterizations and references.\n- The exact implementation/pair_style that ensures continuous energy and forces (e.g., morse/smooth/linear in LAMMPS), with example parameters.\nNote: Avoid EAM/MEAM-type metallic potentials that typically fail to reproduce diatomic Be2 properties.",
+        "expected_answer": "Elliott & Akerson (2015) universal shifted LJ for Be (openKIM LJ612)",
+        "retrieved_answers": [
+            "2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be",
+            "2018--Byggmastar-J-Hodille-E-A-Ferro-Y-Nordlund-K--Be-O"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "For the \u201cUniversal Lennard-Jones (12-6) parameter set\u201d that supplies element-specific \u03b5 and \u03c3 values (including for Be/beryllium), which cross-interaction combining rule does the parameterization explicitly prescribe for mixed-species simulations? Specifically, what are the formulas used to compute Be\u2013X \u03c3_ij and \u03b5_ij (e.g., Lorentz\u2013Berthelot: \u03c3_ij = (\u03c3_i + \u03c3_j)/2 and \u03b5_ij = sqrt(\u03b5_i \u03b5_j), versus geometric\u2013geometric, Waldman\u2013Hagler, Kong, etc.) as stated in the model\u2019s documentation (e.g., OpenKIM LennardJones_Universal)?",
+        "expected_answer": "Elliott & Akerson (2015) universal shifted LJ for Be (openKIM LJ612)",
+        "retrieved_answers": [
+            "2015--Elliott-R-S-Akerson-A--Be",
+            "2015--Elliott-R-S-Akerson-A--Si"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "In LAMMPS, if I use a generic Lennard-Jones (pair_style lj/cut) parameterization for beryllium (Be)\u2014e.g., sigma/epsilon obtained via mixing rules\u2014what are the limits of its transferability? Specifically, why won\u2019t a pairwise LJ potential capture many-body metallic bonding in hcp Be and therefore fail to reproduce bulk properties (lattice constant, cohesive energy, elastic constants, phonons, melting point) and defect energetics (vacancy/interstitial formation energies, stacking faults, dislocation structures), and why are metal-specific models like EAM/MEAM preferred for these applications?",
+        "expected_answer": "Elliott & Akerson (2015) universal shifted LJ for Be (openKIM LJ612)",
+        "retrieved_answers": [
+            "2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be",
+            "2016--Nichol-A-Ackland-G-J--K"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "In the set of provided interatomic models for the Be test simulation (e.g., LAMMPS/OpenKIM options), which specific Lennard-Jones 12-6 model implements an energy-shifted (shifted-cutoff) formulation\u2014such as pair_style lj/shift or an OpenKIM \u201cLJ_12_6_Shifted\u201d variant\u2014so that the Be\u2013Be potential energy is continuous at the cutoff r_c? Please identify the exact model/pair_style name.",
+        "expected_answer": "Elliott & Akerson (2015) universal shifted LJ for Be (openKIM LJ612)",
+        "retrieved_answers": [
+            "2015--Elliott-R-S-Akerson-A--Be",
+            "2015--Elliott-R-S-Akerson-A--C"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "In LAMMPS, which external package/framework provides the Universal-Shifted Lennard-Jones (USLJ) parameters for beryllium (Be)\u2014specifically, is it available via the OpenKIM interface (pair_style kim), and if so, what is the exact OpenKIM model name/ID (e.g., LennardJones612_UniversalShifted) and how is it invoked in a LAMMPS input script?",
+        "expected_answer": "Elliott & Akerson (2015) universal shifted LJ for Be (openKIM LJ612)",
+        "retrieved_answers": [
+            "2015--Elliott-R-S-Akerson-A--Be",
+            "2015--Elliott-R-S-Akerson-A--K"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify the Stillinger\u2013Weber (SW) potential for diamond-cubic silicon that was reparameterized by force-matching to DFT (ab initio) forces specifically to reproduce phonon properties and lattice thermal conductivity, and that yields bulk Si thermal conductivity close to experiment (~130\u2013150 W m\u22121 K\u22121 at 300 K) over 300\u2013500 K in LAMMPS NEMD simulations. Provide the potential name/label, primary citation (authors, year, DOI), and the corresponding LAMMPS potential file name, and distinguish it from the original 1985 SW and other non-SW (e.g., Tersoff) models.",
+        "expected_answer": "2012--Lee-Y-Hwang-G-S--Si-GGA",
+        "retrieved_answers": [
+            "2012--Lee-Y-Hwang-G-S--Si-LDA",
+            "2012--Lee-Y-Hwang-G-S--Si-GGA"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify a LAMMPS Stillinger\u2013Weber (SW) parameter set that was explicitly optimized for 2D monolayer silicene (low-buckled honeycomb) and is suitable for MD thermal conductivity calculations. Requirements:\n- Reproduces DFT low-buckled structure: lattice constant \u2248 3.86 \u00c5, Si\u2013Si bond length \u2248 2.28 \u00c5, buckling height \u0394 \u2248 0.44 \u00c5, cohesive energy \u2248 4.6 eV/atom.\n- Matches DFT phonon dispersion for silicene (no imaginary modes along \u0393\u2013M\u2013K\u2013\u0393).\n- Has been validated for Green\u2013Kubo or NEMD thermal conductivity of silicene (room-temperature k on the order of tens of W m\u22121 K\u22121).\nReturn the recommended SW parameterization name, authors and year, DOI/citation, and a link or filename for a LAMMPS pair_style sw potential file formatted for silicene. Note any pitfalls with using bulk-Si SW/Tersoff parameters for silicene and, if multiple silicene-specific SW sets exist (e.g., Jiang et al., Zhang et al.), compare and recommend one.",
+        "expected_answer": "2014--Zhang-X-Xie-H-Hu-M-et-al--Si-1",
+        "retrieved_answers": [
+            "2014--Zhang-X-Xie-H-Hu-M-et-al--Si-2",
+            "2014--Zhang-X-Xie-H-Hu-M-et-al--Si-1"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Which specific Si Tersoff parameter set (author/year and exact name) has been validated for silicene and used in MD/LAMMPS studies that reproduce the collapse of free\u2011standing single\u2011layer silicene nanoribbons at ~300 K while predicting bilayer silicene remains stable? Please cite the original paper(s) demonstrating this behavior (including validation against silicene buckling, phonon dispersion, and thermal stability) and provide the corresponding LAMMPS potential file name/source.",
+        "expected_answer": "2017--Purja-Pun-G-P-Mishin-Y--Si",
+        "retrieved_answers": [
+            "2014--Zhang-X-Xie-H-Hu-M-et-al--Si-1",
+            "2014--Zhang-X-Xie-H-Hu-M-et-al--Si-2"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify the modified Stillinger\u2013Weber (mSW) potential for single-crystal silicon used in LAMMPS that doubles the three-body coefficient \u03bb relative to the original 1985 SW set (\u03bb: 21 \u2192 42) to suppress ductility and produce brittle Mode-I crack propagation (e.g., along [110] on a {111} cleavage plane) at 0\u2013300 K. Please provide:\n- The exact parameter set (what changes besides \u03bb, if anything)\n- The canonical literature citation (e.g., Holland & Marder 1998; Hauch, Holland, Marder & Swinney PRL 1999)\n- A LAMMPS-compatible potential file name or source/download link for this mSW (\u03bb\u00d72) parameterization.",
+        "expected_answer": "1999--Hauch-J-A-Holland-D-Marder-M-P-Swinney-H-L--Si",
+        "retrieved_answers": [
+            "2012--Lee-Y-Hwang-G-S--Si-LDA",
+            "1999--Hauch-J-A-Holland-D-Marder-M-P-Swinney-H-L--Si"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify the specific Tersoff-style (bond-order) silicon potential for classical MD that is known to reproduce both the experimental elastic constants (approximately C11 \u2248 165 GPa, C12 \u2248 64 GPa, C44 \u2248 79 GPa at ~300 K) and the melting temperature (Tm \u2248 1687 K). Which modified Tersoff parameterization (e.g., Agrawal\u2013Raff\u2013Komanduri 2002/2003, Erhart\u2013Albe ABOP 2005) best meets these criteria? Please provide the recommended model name/author/year, key reference(s), and any common implementation identifiers (e.g., LAMMPS potential files).",
+        "expected_answer": "2007--Kumagai-T-Izumi-S-Hara-S-Sakai-S--Si",
+        "retrieved_answers": [
+            "2007--Kumagai-T-Izumi-S-Hara-S-Sakai-S--Si",
+            "2019--Plummer-G-Tucker-G-J--Ti-Si-C"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify a specific modified Stillinger\u2013Weber (SW) parameterization for elemental silicon that:\n- Stabilizes the Si(111)-(7\u00d77) DAS reconstruction with realistic adatom/rest-atom geometries (heights, bonding, and correct dangling-bond counts),\n- Gives reasonable surface energies and reconstructions for Si(111), Si(100)-(2\u00d71), and Si(110),\n- Preserves bulk properties (a0 \u2248 5.431 \u00c5, Ecoh \u2248 4.63 eV/atom, elastic constants near experiment, sensible melting temperature),\n- Is available for LAMMPS/OpenKIM.\n\nAmong known variants (e.g., Vink et al. 2001 mSW, other SW reparameterizations), which one best meets these criteria, and what are the documented trade-offs? Please include references and, if possible, implementation file names or OpenKIM IDs.",
+        "expected_answer": "1996--Stephenson-P-C-L-Radny-M-W-Smith-P-V--Si",
+        "retrieved_answers": [
+            "2012--Lee-Y-Hwang-G-S--Si-LDA",
+            "2012--Lee-Y-Hwang-G-S--Si-GGA"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify the specific silicon parameter set of the modified Tersoff/bond-order potential that adds a screened Morse-type long-range tail (e.g., the Kumagai\u2013Izumi\u2013Hara\u2013Sakai, 2007 variant) and eliminates abrupt bonding-energy jumps at the cutoff, validated for adatom diffusion on the Si(001)-(2\u00d71) reconstructed surface. Provide the exact name used in LAMMPS (e.g., pair_style tersoff/mod or tersoff/mod/c with the Kumagai Si parameters) and the primary literature citation.",
+        "expected_answer": "1991--Wang-J-Rockett-A--Si",
+        "retrieved_answers": [
+            "2007--Kumagai-T-Izumi-S-Hara-S-Sakai-S--Si",
+            "2007--Munetoh-S-Motooka-T-Moriguchi-K-Shintani-A--Si-O"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "I plan to use LAMMPS to run minima-hopping global searches for bulk silicon tetra-interstitial (I4) clusters. Which empirical interatomic potential and specific parameterization available in LAMMPS best reproduces DFT-calibrated defect energetics (formation/binding energies and relative stabilities of self-interstitials and small interstitial clusters) and remains stable under large atomic rearrangements? Please recommend a concrete choice (e.g., EDIP/Justo-1998, Lenosky MEAM-2000, Erhart\u2013Albe ABOP, Tersoff variants), cite benchmarking studies focused on Si defects (not just bulk properties), provide the exact LAMMPS pair_style and parameter file name, and note best practices for MH (e.g., adding ZBL short-range repulsion and relevant cutoff settings) to avoid unphysical amorphization.",
+        "expected_answer": "2011--Du-Y-A-Lenosky-T-J-Hennig-R-G-et-al--Si",
+        "retrieved_answers": [
+            "2011--Du-Y-A-Lenosky-T-J-Hennig-R-G-et-al--Si",
+            "1998--Justo-J-F-Bazant-M-Z-Kaxiras-E-et-al--Si"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "In LAMMPS, which specific silicon EDIP parameterization (e.g., Justo et al. 1998 EDIP-Si vs any revised/reparameterized EDIP) should be used with pair_style edip to accurately model disordered phases (realistic amorphous-Si RDF/angle distribution, density) and crystalline defects (stacking-fault energies, 1/6<112> partial dislocation core structures)? Please cite the recommended parameter set, provide the exact LAMMPS potential file name/pair_coeff line, and any validation or benchmarks versus Tersoff/SW/MEAM showing performance for amorphous Si and partial dislocations.",
+        "expected_answer": "1998--Justo-J-F-Bazant-M-Z-Kaxiras-E-et-al--Si",
+        "retrieved_answers": [
+            "1998--Justo-J-F-Bazant-M-Z-Kaxiras-E-et-al--Si",
+            "2000--Lenosky-T-J-Sadigh-B-Alonso-E-et-al--Si"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify a published second-nearest-neighbor MEAM (2NN-MEAM) parameter set (LAMMPS library.meam + parameter.meam) that includes Al, Si, Mg, Cu, and Fe simultaneously (suitable for AA6061 composition ranges) and is validated for thermal expansion (\u2248300\u2013800 K) and defect energetics (vacancy/interstitial formation energies and stacking-fault energies) across relevant Al\u2013Si\u2013Mg\u2013Cu\u2013Fe binaries/ternaries; provide the specific parameter set name/citation and download source, and note any known limitations (especially for Fe-containing interactions).",
+        "expected_answer": "2012--Jelinek-B-Groh-S-Horstemeyer-M-F-et-al--Al-Si-Mg-Cu-Fe",
+        "retrieved_answers": [
+            "2022--Mahata-A-Mukhopadhyay-T-Asle-Zaeem-M--Al-Fe",
+            "2022--Mahata-A-Mukhopadhyay-T-Asle-Zaeem-M--Al-Cu"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "For molecular dynamics of undercooled Au\u2013Si (Si\u2013Au) melts undergoing rapid quenching to probe crystallization pathways and critical cooling rates, which published interatomic potential specifically parameterized for the Au\u2013Si alloy is recommended? Please identify the potential type and parameter set (e.g., EAM/MEAM/ADP/ReaxFF) that has been validated to reproduce the Au\u2013Si eutectic temperature/composition, liquid structure, and glass-forming/crystallization behavior, and provide the primary citation and a LAMMPS-ready file name/link.",
+        "expected_answer": "2018--Starikov-S-V-Lopanitsyna-N-Y-Smirnova-D-E-Makarov-S-V--Si-Au",
+        "retrieved_answers": [
+            "2018--Starikov-S-V-Lopanitsyna-N-Y-Smirnova-D-E-Makarov-S-V--Si-Au",
+            "2020--Starikov-S-Gordeev-I-Lysogorskiy-Y-et-al--Si-Au-Al"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify the most accurate Tersoff-parameterized Si\u2013O potential for generating amorphous SiO2 (a\u2011SiO2, vitreous silica) via melt\u2013quench MD in LAMMPS and validating against experiment. Compare available parameter sets (e.g., Munetoh et al., J. Phys. Soc. Jpn. 2007; Watanabe et al. 2012; other Si\u2013O Tersoff variants such as the LAMMPS potentials/SiO.tersoff file) on their ability to reproduce:\n- Room-temperature density \u22482.2 g/cm3\n- Partial RDFs g_SiO, g_OO, g_SiSi with peak positions near 1.60 \u00c5 (Si\u2013O), 2.62 \u00c5 (O\u2013O), 3.08 \u00c5 (Si\u2013Si)\n- Vibrational/phonon DOS (VDOS/PDOS) matching INS/Raman bands around ~400, ~800, and ~1100 cm^-1\n\nPlease provide:\n- Specific LAMMPS file names and pair_style settings (pair_style tersoff, optional ZBL spline if recommended)\n- Literature benchmarks/validation studies comparing these Tersoff parametrizations for a\u2011SiO2 (RDF, structure factor S(q), elastic constants, VDOS)\n- Known limitations (e.g., over-stiff VDOS, incorrect elastic moduli) versus alternatives like BKS, Vashishta, SW\n- Recommended melt\u2013quench protocol for fair comparison (melt ~5000 K, quench rates 10^12\u201310^13 K/s, NPT to \u03c1\u22482.2 g/cm3 at 300 K, system size \u22653000 atoms)\n\nKeywords: LAMMPS, pair_style tersoff, SiO.tersoff, Munetoh potential, Watanabe Si\u2013O Tersoff, a\u2011SiO2, vitreous silica, RDF, VDOS, PDOS, phonon DOS, inelastic neutron scattering.",
+        "expected_answer": "2007--Munetoh-S-Motooka-T-Moriguchi-K-Shintani-A--Si-O",
+        "retrieved_answers": [
+            "2007--Munetoh-S-Motooka-T-Moriguchi-K-Shintani-A--Si-O",
+            "2007--Kumagai-T-Izumi-S-Hara-S-Sakai-S--Si"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify the specific actively learned Atomic Cluster Expansion (ACE) interatomic potential for the Si\u2013O system (SiO2) that:\n- Is compatible with LAMMPS (pair_style pace; accepts .yace/.ace model files)\n- Was trained via active learning to cover crystalline and amorphous silica (e.g., quartz, coesite, stishovite; glass), silica aerogels, and surfaces\n- Has been validated for silica up to ~200 GPa\n- Includes the explicit caveat that it must not be used for high-pressure elemental Si\n\nProvide the exact model name/identifier (e.g., AL-ACE Si\u2013O), repository/DOI or OpenKIM ID, and any LAMMPS usage notes.",
+        "expected_answer": "2024--Erhard-L-C-Rohrer-J-Albe-K-Deringer-V-L--Si-O",
+        "retrieved_answers": [
+            "2024--Leimeroth-N-Rohrer-J-Albe-K--Si-O-C",
+            "2024--Erhard-L-C-Rohrer-J-Albe-K-Deringer-V-L--Si-O"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Which publicly available machine-learning interatomic potential for the ternary Si\u2013O\u2013C (SiOC) system can accurately model amorphous polymer\u2011derived silicon oxycarbide glass\u2011ceramics via melt\u2013quench MD and predict composition\u2011dependent elastic properties (Young\u2019s/bulk/shear moduli)? Prioritize MLIPs with reactive bonding for Si\u2013O, Si\u2013C, and C\u2013C, validated against DFT/experiment, and usable in LAMMPS/ASE (e.g., GAP, MTP, Deep Potential, ACE/NequIP). Name the specific parameter set/model and provide key citations demonstrating accuracy for stiffness\u2013composition relations.",
+        "expected_answer": "2024--Leimeroth-N-Rohrer-J-Albe-K--Si-O-C",
+        "retrieved_answers": [
+            "2024--Leimeroth-N-Rohrer-J-Albe-K--Si-O-C",
+            "2024--Leimeroth-N-Rohrer-J-Albe-K--Si-O-C"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "In LAMMPS for crystalline silicon, I need a SNAP-based ML potential with near-DFT accuracy for energies, forces, elastic constants, and phonon dispersion curves and I can accept higher computational cost. According to Zuo et al.\u2019s \u201cPerformance and cost assessment of MLIPs\u201d (JCP 152, 154104, 2020), which specific Si SNAP variant (linear SNAP vs quadratic SNAP/qSNAP) best meets these accuracy targets, and what are the exact LAMMPS model files/OpenKIM ID and pair_style snap settings to use?",
+        "expected_answer": "2020--Zuo-Y-Chen-C-Li-X-et-al--Si-SNAP",
+        "retrieved_answers": [
+            "2020--Zuo-Y-Chen-C-Li-X-et-al--Si-SNAP",
+            "2020--Zuo-Y-Chen-C-Li-X-et-al--Si-qSNAP"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify interatomic potentials for elemental sodium (Na) that accurately reproduce the experimental melting temperature (~371 K at ~1 atm/0 GPa) when computed via a solid\u2013liquid two-phase (direct coexistence/solid\u2013liquid interface) MD simulation. Please list specific parameterizations (e.g., EAM/MEAM, Finnis\u2013Sinclair, Sutton\u2013Chen, machine-learning potentials), their reported Tm from the literature, LAMMPS-ready file names/links, and key citations. Note any known issues (e.g., incorrect bcc ground-state stability, anomalous thermal expansion, large finite-size effects) and recommend the most reliable potential for ambient-pressure two-phase coexistence calculations.",
+        "expected_answer": "2016--Nichol-A-Ackland-G-J--Na",
+        "retrieved_answers": [
+            "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--Na",
+            "2016--Nichol-A-Ackland-G-J--Na"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify interatomic potentials for bcc sodium (Na) that are explicitly fitted to 0 K properties\u2014cohesive energy, vacancy formation energy, lattice parameter, and elastic constants (C11, C12, C44). Which specific EAM/MEAM (Finnis\u2013Sinclair\u2013type) models are recommended for zero-temperature mechanical-property calculations? Please cite validated Na parameterizations (e.g., Chantasiriwan\u2013Milstein, MEAM variants), report their fitting/validation targets, and provide sources for LAMMPS-ready files (e.g., NIST IPR).",
+        "expected_answer": "2016--Nichol-A-Ackland-G-J--Na",
+        "retrieved_answers": [
+            "2016--Nichol-A-Ackland-G-J--Na",
+            "2003--Lee-B-J-Shim-J-H-Baskes-M-I--Al"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify a published interatomic potential for sodium that, using only 0 K training data (no finite\u2011temperature fitting), reproduces the low\u2011temperature/dynamical instability of bcc Na (e.g., negative C\u2032 or imaginary phonon modes). Please provide the potential name, functional form (EAM/MEAM/BOP/ML, etc.), citation, and where to obtain it (e.g., OpenKIM/LAMMPS ID).",
+        "expected_answer": "2016--Nichol-A-Ackland-G-J--Na",
+        "retrieved_answers": [
+            "2016--Nichol-A-Ackland-G-J--Na",
+            "2016--Nichol-A-Ackland-G-J--K"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Which classical interatomic potential for bcc sodium was purpose-built to compute the solid\u2013liquid (crystal\u2013melt) interfacial free energy (\u03b3_sl) at the melting point and to test the Laird\u2013Ewing relations? Specify the potential\u2019s name/type (e.g., EAM/MEAM), its common identifier, the authors and year, and the original publication/DOI where it was introduced.",
+        "expected_answer": "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--Na",
+        "retrieved_answers": [
+            "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--Na",
+            "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--fictional-Na-2"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "For molecular dynamics studies of solid\u2013liquid interfacial free energy (\u03b3SLI) in bcc sodium, I need a synthetic Na interatomic potential that deliberately increases the latent heat of fusion (\u0394Hm) and reduces liquid short\u2011range order (weaker first g(r)/S(k) peaks or lower q6). Among the published synthetic EAM sodium potentials that systematically tune melting thermodynamics and liquid structure, which specific parameter set (name/label/citation) best matches these criteria and should be used first?",
+        "expected_answer": "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--fictional-Na-2",
+        "retrieved_answers": [
+            "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--Na",
+            "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--fictional-Na-2"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "For a second, independent validation of the sensitivity of the solid\u2013liquid interfacial free energy (\u03b3_sl) in bcc sodium at its melting point to increased latent heat of fusion and reduced liquid short-range order, which specific alternative synthetic interatomic potential (distinct from the one used in the first test) will you use? Please name the potential family and parameter set (with citation and implementation availability, e.g., LAMMPS), and justify that it can deliver a higher \u0394H_fus and lower liquid order (e.g., reduced g(r) first-peak height/coordination number or S(k1)), while keeping T_m and basic bcc properties (a0, elastic constants) close to experimental values.",
+        "expected_answer": "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--fictional-Na-3",
+        "retrieved_answers": [
+            "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--fictional-Na-2",
+            "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--Na"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify the sodium (Na) EAM/Finnis\u2013Sinclair potential that was specifically fitted to reproduce the liquid structure near the melting point and solid\u2013liquid interface (SLI) properties, and is provided as a LAMMPS eam/fs file. Give the model name/authors and citation, and point to the downloadable file (e.g., on the NIST Interatomic Potentials Repository).",
+        "expected_answer": "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--Na",
+        "retrieved_answers": [
+            "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--Na",
+            "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--fictional-Na-2"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Recommend interatomic potential models and specific parameter sets for AX ionic solids that accurately reproduce relative phase stability across B1 (NaCl), B2 (CsCl), and B3 (zinc\u2011blende) structures. Constraints and needs:\n- Systems: alkali halides (e.g., NaCl, KCl, CsCl) and II\u2013VI compounds (e.g., ZnS).\n- Target properties: correct energy ordering and B1\u2194B2 transition pressures, 0 K lattice constants and elastic constants, and phonon stability for all three phases.\n- Model types to consider: Coulomb + short\u2011range (Buckingham or Born\u2013Mayer\u2013Huggins) with dispersion (C6), polarizable core\u2013shell models, and transferable charge\u2011equilibration many\u2011body models (e.g., COMB3, ReaxFF); prefer parameterizations that leverage or are consistent with a calibrated intrinsic bond\u2011length (bond\u2011valence) database.\n- Software: compatible with LAMMPS or GULP using Ewald/PPPM long\u2011range electrostatics.\nFor each recommended option, provide literature/source (or OpenKIM ID), known validation across B1/B2/B3, and guidance on when to prefer polarizable vs non\u2011polarizable forms.",
+        "expected_answer": "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I",
+        "retrieved_answers": [
+            "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I",
+            "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Which LAMMPS-compatible ionic potential (and ready-to-use parameter file) accurately reproduces the relative stability (lattice energies/phase ordering) of B1 (NaCl), B2 (CsCl), and B3 (zincblende) structures across alkali halides (e.g., LiF, NaCl, KCl, RbCl, CsCl with F\u2212/Cl\u2212/Br\u2212/I\u2212) so the effect of ionic size can be assessed? Please recommend a validated rigid-ion Buckingham/Born\u2013Mayer\u2013Huggins (Tosi\u2013Fumi or Sangster\u2013Dixon) or a polarizable core\u2013shell model, and provide LAMMPS-ready inputs: the specific potential file or source link, pair_style (buck/coul/long or buck/coul/long/cs + fix core/shell), pair_coeff parameters for all ion pairs, recommended kspace settings (PPPM/Ewald), and references showing accuracy for B1/B2/B3 phase stability.",
+        "expected_answer": "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I",
+        "retrieved_answers": [
+            "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I",
+            "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify the canonical paper that introduces a generalized Morse (Rydberg/UBER) interatomic potential for metals, parameterized by cohesive energy (energy of vaporization), equilibrium lattice constant, and bulk modulus (compressibility), and applied to sodium (Na) and other cubic metals to analyze the equation of state and elastic constants (C11, C12, C44). Please provide the full citation (authors, title, journal, year), likely the Rose\u2013Ferrante\u2013Smith Phys. Rev. B work from the mid-1980s.",
+        "expected_answer": "1959--Girifalco-L-A-Weizer-V-G--Na",
+        "retrieved_answers": [
+            "1959--Girifalco-L-A-Weizer-V-G--Na",
+            "1959--Girifalco-L-A-Weizer-V-G--Ca"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify the interatomic potential that matches these criteria: sodium (Na), Lennard\u2013Jones (12-6) form with energy shifted to make the energy continuous at the cutoff, cross-species parameters generated via Lorentz\u2013Berthelot mixing, and parameters fitted only to Na2 dimer properties\u2014specifically the OpenKIM \u201cLJ_ElliottAkerson_2015_Universal\u201d model (provide exact model name/ID).",
+        "expected_answer": "2015--Elliott-R-S-Akerson-A--Na",
+        "retrieved_answers": [
+            "2015--Elliott-R-S-Akerson-A--Na",
+            "2016--Nichol-A-Ackland-G-J--Na"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "For modeling the gas-phase sodium dimer Na2 (ground state X 1\u03a3g+), which variant of the shifted Lennard-Jones 12-6 potential (r-shifted, energy-shifted, or force-shifted) is recommended to reproduce the experimental equilibrium bond length r_e and dissociation energy D_e (not bulk Na properties)? Please provide the specific parameters (epsilon, sigma, shift, cutoff) and literature citations; if a shifted LJ is unsuitable for Na2, cite alternative simple pair-potential parameterizations (e.g., Morse) fitted to r_e and D_e.",
+        "expected_answer": "2015--Elliott-R-S-Akerson-A--Na",
+        "retrieved_answers": [
+            "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--Na",
+            "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--fictional-Na-2"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "For elemental sodium (Na) in the bcc phase at 0 K, which interatomic potential (e.g., EAM/MEAM) was explicitly fit to reproduce bulk properties\u2014cohesive energy, equilibrium lattice parameter a0, and single\u2011crystal elastic constants C11, C12, and C44\u2014from its training set, and thus should match those values closely? Please provide the specific potential name/citation and, if available, its OpenKIM or LAMMPS identifier.",
+        "expected_answer": "2016--Nichol-A-Ackland-G-J--Na",
+        "retrieved_answers": [
+            "2016--Nichol-A-Ackland-G-J--Na",
+            "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--Na"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify the specific synthetic sodium (Na) interatomic potential used as the \u201cperturbed\u201d model\u2014with deliberately increased latent heat of fusion (\u0394H_fus)\u2014for benchmarking solid\u2013liquid interfacial (SLI) free-energy (\u03b3_sl) predictions against a realistic Na potential. Specify the potential type (e.g., EAM/MEAM, Sutton\u2013Chen), its parameterization/name, and the original reference where the elevated latent heat is reported.",
+        "expected_answer": "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--fictional-Na-2",
+        "retrieved_answers": [
+            "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--Na",
+            "2015--Wilson-S-R-Gunawardana-K-G-S-H-Mendelev-M-I--fictional-Na-2"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "I\u2019m modeling trends across alkali metals (Na, K, Rb, Cs) and need a closed-form, physics-based interatomic potential that stabilizes bcc and reproduces thermodynamic behavior without any finite-temperature fitting. Which potential framework should I choose\u2014e.g., Generalized Pseudopotential Theory (GPT/MGPT) or second-order nearly-free-electron pseudopotentials based on the Ashcroft empty-core (Friedel-oscillatory pair potentials)\u2014and what standard parameterization is recommended for Na?",
+        "expected_answer": "2016--Nichol-A-Ackland-G-J--Na",
+        "retrieved_answers": [
+            "2016--Nichol-A-Ackland-G-J--Na",
+            "2016--Nichol-A-Ackland-G-J--K"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "In LAMMPS, I plan to determine the melting temperature of elemental potassium (bcc) at ~1 atm using a two-phase (solid\u2013liquid) coexistence simulation. Which validated potassium interatomic potential(s) should I use\u2014preferably EAM/MEAM potentials available in the LAMMPS potentials directory\u2014with exact file names and literature citations? For the recommended potential(s), what melting temperature at ambient pressure should I expect if the model is accurate (experimental Tm \u2248 336\u2013337 K), and what Tm values have been reported in the original papers or subsequent validation studies?",
+        "expected_answer": "2016--Nichol-A-Ackland-G-J--K",
+        "retrieved_answers": [
+            "2016--Nichol-A-Ackland-G-J--K",
+            "2016--Nichol-A-Ackland-G-J--Na"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify and compare published interatomic potentials for elemental potassium (K) that are validated for bcc K at 0 K and ~0 GPa. Specifically, which potential (EAM/MEAM/Finnis\u2013Sinclair, etc.; give name/author/year/DOI or OpenKIM/NIST-IPR ID) best reproduces, simultaneously, the equilibrium lattice parameter a0, elastic constants C11, C12, C44 (and derived bulk/shear moduli), cohesive energy, and monovacancy formation energy? Include quantitative errors versus experiment/DFT and note LAMMPS compatibility; exclude models tuned for high-pressure phases or ionic/polarizable descriptions.",
+        "expected_answer": "2016--Nichol-A-Ackland-G-J--K",
+        "retrieved_answers": [
+            "2016--Nichol-A-Ackland-G-J--K",
+            "2008--Mendelev-M-I-Kramer-M-J-Becker-C-A-Asta-M--Al"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Seeking a potassium (K) interatomic potential for MD (LAMMPS/OpenKIM) that (1) explicitly stabilizes the bcc phase at low temperature/0 K (positive C\u2032, no imaginary phonons) and (2) has been validated by accurately reproducing K\u2019s melting behavior (e.g., correct ambient-pressure melting point \u2248336.5 K via two-phase coexistence or Z-method). Which specific K potential (EAM/MEAM/Finnis\u2013Sinclair/Gupta, etc.) meets these criteria? Please provide the potential name/file, primary citation, and a download/source link.",
+        "expected_answer": "2016--Nichol-A-Ackland-G-J--K",
+        "retrieved_answers": [
+            "2016--Nichol-A-Ackland-G-J--K",
+            "2008--Mendelev-M-I-Kramer-M-J-Becker-C-A-Asta-M--Al"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify the interatomic potential that, although fitted only to 0 K static crystalline properties (e.g., lattice parameter, cohesive energy, elastic constants) and without any liquid or finite-temperature training data, has been demonstrated to accurately predict finite-temperature thermodynamics such as melting points. Specify the potential\u2019s name and family (e.g., EAM/MEAM, Tersoff/BOP, GAP, MTP), the material system(s) where this transferability was shown, and provide primary literature citations.",
+        "expected_answer": "2016--Nichol-A-Ackland-G-J--K",
+        "retrieved_answers": [
+            "2016--Nichol-A-Ackland-G-J--K",
+            "2008--Mendelev-M-I-Kramer-M-J-Becker-C-A-Asta-M--Al"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Locate the original publication that defines an Embedded-Atom Method Finnis\u2013Sinclair (EAM/FS) potential for elemental potassium (K) and provides a LAMMPS-compatible K.eam.fs file for use with pair_style eam/fs. Return the full citation (authors, year, journal, DOI) and a reliable download link (e.g., LAMMPS/potentials, NIST Interatomic Potentials Repository, OpenKIM, or the authors\u2019 site). Confirm the file is in eam/fs format (not eam/alloy or MEAM), note whether it is a single-element K potential or part of a multi-element set, and summarize the fitting/validation properties (e.g., bcc K lattice parameter, cohesive energy, elastic constants, vacancy/melting behavior) and applicable temperature/pressure range.",
+        "expected_answer": "2016--Nichol-A-Ackland-G-J--K",
+        "retrieved_answers": [
+            "2012--Schopf-D-Brommer-P-Frigan-B-Trebin-H-R--Al-Mn-Pd",
+            "2013--Agrawal-A-Mishra-R-Ward-L-et-al--Be"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "In LAMMPS using the OpenKIM interface (pair_style kim) for a multicomponent system with multiple atom types, I need a Lennard\u2013Jones 12-6 nonbonded model that applies Lorentz\u2013Berthelot (LB) mixing for cross terms and enforces an energy-shifted cutoff so the potential energy is continuous and zero at r = rc (force continuity not required). Which specific OpenKIM model/model driver and parameterization (e.g., \u201cLJ 12-6 with LB mixing, energy-shifted cutoff\u201d) should I select?",
+        "expected_answer": "2015--Elliott-R-S-Akerson-A--K",
+        "retrieved_answers": [
+            "2015--Elliott-R-S-Akerson-A--C",
+            "2015--Elliott-R-S-Akerson-A--K"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "When using a universal shifted 12-6 Lennard-Jones pair potential (uSLJ, \u201cK\u201d parameter set) to compute the elastic constants (C11, C12, C44) of bulk bcc potassium at 0 K/ambient pressure, what fundamental limitation should you watch for\u2014namely, that central pair potentials enforce the zero-pressure Cauchy relation (C12 = C44) and omit many-body metallic bonding\u2014making them unable to reproduce K\u2019s real elastic response and potentially mis-stabilizing bcc?",
+        "expected_answer": "2015--Elliott-R-S-Akerson-A--K",
+        "retrieved_answers": [
+            "2016--Nichol-A-Ackland-G-J--K",
+            "2007--Vashishta-P-Kalia-R-K-Nakano-A-Rino-J-P--Si-C"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "In OpenKIM, for the Dimer_Gas_Phase test using the generic LennardJones612 model driver to reproduce the gas-phase K2 equilibrium bond length and dissociation energy, which specific potassium LJ ParameterSet should be used? Please provide the exact OpenKIM ParameterSet name/ID for K (and its epsilon and sigma values or reference) that this test is intended to use.",
+        "expected_answer": "2015--Elliott-R-S-Akerson-A--K",
+        "retrieved_answers": [
+            "2015--Elliott-R-S-Akerson-A--K",
+            "2015--Elliott-R-S-Akerson-A--C"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Which LAMMPS interatomic potential and parameter file should I use to compare the 0 K (and pressure-dependent) stability of KCl in the B1 (rocksalt/NaCl) versus B2 (CsCl) structures? I need a validated alkali-halide model that encodes ionic radii via equilibrium pair distances (e.g., Tosi\u2013Fumi/Born\u2013Mayer\u2013Huggins Buckingham + long-range Coulomb). Please recommend a concrete KCl parameter set or OpenKIM model (with citation), specify the appropriate pair_style (buck/coul/long or born/coul/long), and note required settings (charges K+=+1, Cl\u2212=\u22121; Ewald/PPPM) known to reproduce the B1 ground state and reasonable B1\u2192B2 transition pressure.",
+        "expected_answer": "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I",
+        "retrieved_answers": [
+            "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I",
+            "2016--Nichol-A-Ackland-G-J--K"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify a curated repository of calibrated interionic potentials for alkali halides (KI, KBr) that provides parameter sets (e.g., Buckingham/Born\u2013Mayer\u2013Huggins/Tosi\u2013Fumi) and benchmarks for B1 (NaCl/rocksalt), B2 (CsCl), and B3 (zinc blende) structures, including energy\u2013volume curves and relative phase stability. Which database (e.g., OpenKIM/NIST Interatomic Potentials Repository, JARVIS-FF) is specifically designed for such B1/B2/B3 studies?",
+        "expected_answer": "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I",
+        "retrieved_answers": [
+            "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I",
+            "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify a LAMMPS-compatible machine-learning interatomic potential for molten LiCl\u2013KCl mixtures that was trained on DFT with the SCAN meta-GGA (not PBE). Provide the model name/type (e.g., DeePMD, NequIP, GAP), citation/DOI and any GitHub/model repository, the composition and temperature ranges it was trained/validated on (including the 58:42 mol% eutectic and off-eutectic compositions), and how long-range electrostatics/polarization are treated. Summarize the experimental validations reported\u2014X-ray/neutron structure factors and RDFs, density vs temperature, viscosity, ionic self-diffusion coefficients for Li+, K+, and Cl\u2212, and electrical conductivity\u2014along with quantitative errors versus experiment (e.g., RMSE or percent errors). Include brief LAMMPS setup details (pair_style, required plugins, units) or a minimal input snippet for running the model.",
+        "expected_answer": "2022--Guo-J-Ward-L-Babuji-Y-et-al--Li-K-Cl",
+        "retrieved_answers": [
+            "2022--Guo-J-Ward-L-Babuji-Y-et-al--Li-K-Cl",
+            "2024--Meng-F-S-Shinzato-S-Zhang-S-et-al--Fe-C-DP"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "For the published Gaussian Approximation Potential (GAP) for molten LiCl\u2013KCl, what LiCl mole-fraction range was actually included in the training data? Specifically, were pure LiCl and KCl\u2011rich (very low LiCl) configurations present, or are those composition extremes absent\u2014meaning simulations at x_LiCl near 0 or 1 would be extrapolations and thus unreliable?",
+        "expected_answer": "2022--Guo-J-Ward-L-Babuji-Y-et-al--Li-K-Cl",
+        "retrieved_answers": [
+            "2022--Guo-J-Ward-L-Babuji-Y-et-al--Li-K-Cl",
+            "2016--Nichol-A-Ackland-G-J--K"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify the specific Morse-based interatomic potential/model (e.g., modified/extended/generalized Morse pair potential) used in a classical study of body-centered-cubic potassium (K) that computed the equation of state and second-order elastic constants under arbitrary (finite) homogeneous deformation, and reported agreement with experimental data while satisfying the Born mechanical stability criteria (C11 \u2212 C12 > 0, C44 > 0, C11 + 2C12 > 0). Provide the model name and the primary bibliographic citation (authors, year, journal).",
+        "expected_answer": "1959--Girifalco-L-A-Weizer-V-G--K",
+        "retrieved_answers": [
+            "1959--Girifalco-L-A-Weizer-V-G--K",
+            "1959--Girifalco-L-A-Weizer-V-G--Ca"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Identify an interatomic potential/force field with proven composition transferability for molten LiCl\u2013KCl: specifically, a model trained without the eutectic composition that nevertheless reproduces the experimentally measured liquid structure of the LiCl\u2013KCl eutectic (\u224858:42 mol% LiCl:KCl) near its melting temperature, as validated by neutron/X-ray structure factors S(q) and partial RDFs gij(r). Compare classical rigid-ion and polarizable-ion models (e.g., Tosi\u2013Fumi, Born\u2013Mayer\u2013Huggins, PIM/Drude) against machine-learning potentials (e.g., GAP, MTP, SNAP, NequIP/Allegro), and name the specific potential/parameter set with citations demonstrating this zero-shot composition transfer.",
+        "expected_answer": "2022--Guo-J-Ward-L-Babuji-Y-et-al--Li-K-Cl",
+        "retrieved_answers": [
+            "2022--Guo-J-Ward-L-Babuji-Y-et-al--Li-K-Cl",
+            "2016--Nichol-A-Ackland-G-J--K"
+        ],
+        "parity": "Correct"
+    },
+    {
+        "question": "Which publication demonstrates constructing a simple analytic interatomic pair potential for bcc metallic potassium (K) using only three experimental inputs\u2014cohesive energy (heat of vaporization), equilibrium lattice constant, and bulk modulus (compressibility)? Include approaches based on the universal binding energy relation/universal equation of state (Rose\u2013Ferrante\u2013Smith) that fit a Morse-like potential from E_coh, a0, and B0.",
+        "expected_answer": "1959--Girifalco-L-A-Weizer-V-G--K",
+        "retrieved_answers": [
+            "2016--Nichol-A-Ackland-G-J--K",
+            "1988--Khor-K-E-Das-Sarma-S--C"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "OpenKIM/LAMMPS: I need a simple, generic pair potential for elemental calcium that can be quickly parameterized to match the Ca2 dimer equilibrium bond length (r_e) and dissociation energy (D_e), and that guarantees a continuous energy at the cutoff (preferably with a shifted/smoothed cutoff). Which specific OpenKIM model (name/ID)\u2014ideally a Morse-type pair potential supporting KIM species 'Ca'\u2014should I choose?",
+        "expected_answer": "Lennard-Jones 12-6 (shifted) \"Universal\" for Ca \u2014 Elliott & Akerson 2015",
+        "retrieved_answers": [
+            "2015--Elliott-R-S-Akerson-A--Ca",
+            "2015--Kim-K-H-Jeon-J-B-Lee-B-J--Mg-Ca"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "For bulk fcc calcium (Ca, Fm-3m) at 0 K and ambient pressure, is the universal shifted Lennard-Jones (USLJ) Ca parameterization suitable for calculating metallic properties such as vacancy formation energy and elastic constants (C11, C12, C44, bulk modulus), or should I use a many-body metal potential instead? Please recommend specific Ca potentials (e.g., EAM/MEAM/Finnis\u2013Sinclair) that have been fitted/validated for fcc Ca, with published benchmarks for lattice constant, cohesive energy, elastic constants, and vacancy formation/migration energies. Include citations and download links (OpenKIM/LAMMPS), note any temperature/phase limitations, and comment on expected accuracy versus DFT/experiment.",
+        "expected_answer": "2NN MEAM for Ca \u2014 Kim, Jeon, Lee 2015",
+        "retrieved_answers": [
+            "2015--Choudhary-K-Liang-T-Chernatynskiy-A-et-al--Al",
+            "1996--Cai-J-Ye-Y-Y--Al-Cu"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "For face-centered cubic calcium (Ca), if I need a simple three-parameter pair potential fitted to the cohesive (vaporization) energy, equilibrium lattice constant a0, and isothermal compressibility (bulk modulus B0) to reproduce the equation of state E(V) and elastic constants (C11, C12, C44), which functional form is most appropriate\u2014Morse, Mie/Lennard\u2011Jones (m\u2013n), or Buckingham (exp\u20116)\u2014for a metallic system like Ca (excluding many-body models such as EAM/Finnis\u2013Sinclair), and why?",
+        "expected_answer": "Morse potential for cubic metals \u2014 Girifalco & Weizer 1959 (Ca)",
+        "retrieved_answers": [
+            "1959--Girifalco-L-A-Weizer-V-G--Ca",
+            "2007--Vashishta-P-Kalia-R-K-Nakano-A-Rino-J-P--Si-C"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "I\u2019m modeling the low-temperature order\u2013disorder transition in the 1/1 cubic approximant CaCd6, driven by reorientation of the central tetrahedra in Tsai-type clusters, and I need an interatomic potential for Ca\u2013Cd that accurately captures orientational energetics and the long-range Friedel oscillations typical of Cd\u2013Ca Hume\u2013Rothery alloys. Which specific, validated Ca\u2013Cd potential/parameterization should I use (e.g., the Mihalkovi\u010d\u2013Widom Empirical Oscillating Pair Potentials), and where can I find the parameters and an implementation (LAMMPS) plus references/benchmarks showing it reproduces cluster-orientation interactions and the low-T transition sufficiently to fit an effective orientational Hamiltonian?",
+        "expected_answer": "EAM for Ca\u2013Cd (CaCd6) \u2014 Brommer, G\u00e4hler, Mihalkovi\u010d 2007",
+        "retrieved_answers": [
+            "2007--Brommer-P-Gahler-F-Mihalkovic-M--Ca-Cd",
+            "2006--Brommer-P-Gahler-F--Al-Ni-Co-a"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify the most reliable LAMMPS-compatible interatomic potential (EAM/MEAM/2NN-MEAM/ReaxFF/BOP) for magnesium\u2013calcium (Mg\u2013Ca) alloys that can accurately model both solid solutions and intermetallics in atomistic MD/MC simulations. Compare published candidates and their validation against experiment and DFT for:\n- Structural: hcp-Mg and fcc-Ca lattice parameters and elastic constants (target \u22645\u201310% error)\n- Thermodynamic: cohesive and formation energies, heats of mixing across composition, phase stability of Mg2Ca (C14 Laves) and related phases, melting behavior (\u22480\u20131000 K) (target \u226450\u2013100 meV/atom error)\n- Defects: vacancy/interstitial formation and migration energies, stacking-fault energies in hcp-Mg, and surface energies\n\nRecommend a specific potential with justification, summarize known limitations (e.g., SFE accuracy, melting point bias, phase stability errors), and provide citations (DOIs) plus links or filenames to the LAMMPS parameter files. Include any head-to-head benchmarks for Mg\u2013Ca (e.g., 2NN-MEAM parameterizations vs EAM cross-interactions) published up to 2025.",
+        "expected_answer": "2NN MEAM for Mg\u2013Ca \u2014 Kim, Jeon, Lee 2015",
+        "retrieved_answers": [
+            "2015--Kim-K-H-Jeon-J-B-Lee-B-J--Mg-Ca",
+            "2022--Mahata-A-Mukhopadhyay-T-Asle-Zaeem-M--Al-Fe"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify the interatomic potential specifically developed for the ternary Mg\u2013Zn\u2013Ca system that has been validated against DFT to reproduce composition-dependent generalized stacking-fault energies (GSFE/gamma surfaces) in hcp Mg (basal {0001}, prismatic {10-10}, pyramidal {10-11}/{11-22}) and to capture Zn/Ca segregation (binding energies, segregation profiles) to the {10-12} twin boundary. Which potential (name/type: EAM/MEAM/MLP) meets these criteria, and what is its primary reference or repository?",
+        "expected_answer": "2NN MEAM for Mg\u2013Zn\u2013Ca \u2014 Jang, Seol, Lee 2019",
+        "retrieved_answers": [
+            "2019--Jang-H-S-Seol-D-Lee-B-J--Mg-Zn-Ca",
+            "2015--Kim-K-H-Jeon-J-B-Lee-B-J--Mg-Ca"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "I need an OpenKIM calcium parameterization for a quick exploratory MD of a Ca\u2013X mixture where cross nonbonded terms will be generated via Lorentz\u2013Berthelot mixing (i.e., requires per-element Lennard\u2013Jones \u03b5 and \u03c3). Which specific OpenKIM LJ model(s) for Ca are appropriate and LB-compatible (please include model names/IDs, e.g., universal LJ parameter sets like LJ_ElliottAkerson_2015_Universal), and are there caveats compared to Ca EAM/BOP models that don\u2019t support LB mixing?",
+        "expected_answer": "Lennard-Jones 12-6 (shifted) \"Universal\" for Ca \u2014 Elliott & Akerson 2015",
+        "retrieved_answers": [
+            "2015--Elliott-R-S-Akerson-A--Ca",
+            "2015--Kim-K-H-Jeon-J-B-Lee-B-J--Mg-Ca"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Recommend a LAMMPS-compatible interatomic potential for metallic calcium (Ca) that accurately models deformation-related properties. Specifically, identify validated EAM/MEAM (or other) potentials for pure Ca that reproduce:\n- Bulk: fcc lattice parameter, cohesive energy, elastic constants, equation of state, thermal expansion\n- Defects: vacancy/interstitial formation energies, surface energies, stacking-fault energies, dislocation core structures\n- Thermal/phase behavior: melting point, phonon dispersion, and fcc\u2192bcc stability at elevated T\n\nProvide:\n- Exact potential names, parameter files (.eam, .eam.fs, MEAM libraries) and where to obtain them (NIST IPR, OpenKIM, LAMMPS potentials repo)\n- Required LAMMPS pair_style/pair_coeff usage\n- Validation data/citations and known limitations for plasticity simulations (e.g., SFE accuracy, melting bias, phase stability issues)",
+        "expected_answer": "2NN MEAM for Ca \u2014 Kim, Jeon, Lee 2015",
+        "retrieved_answers": [
+            "2015--Kim-K-H-Jeon-J-B-Lee-B-J--Mg-Ca",
+            "2015--Kim-K-H-Jeon-J-B-Lee-B-J--Ca"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Using LAMMPS, I need a validated interatomic potential for the Mg\u2013Ca binary that reproduces structural, thermodynamic, and defect properties of Mg, Ca, and their intermetallics (e.g., Mg2Ca Laves). Which specific parameter sets are recommended\u2014preferably 2NN-MEAM or EAM\u2014with explicit file names for the library (library.meam) and the Mg\u2013Ca alloy parameter file, and with documented accuracy for:\n- Structural: lattice parameters and elastic constants\n- Thermodynamic: cohesive/formation energies and relative phase stability\n- Defects: vacancy/interstitial formation and migration, stacking-fault and surface energies\n\nPlease provide download links (e.g., NIST Interatomic Potentials Repository or LAMMPS/potentials), the exact pair_style/pair_coeff usage, citation(s), and any known limitations (e.g., phases covered, temperature range, poor defect energetics).",
+        "expected_answer": "2NN MEAM for Mg\u2013Ca \u2014 Kim, Jeon, Lee 2015",
+        "retrieved_answers": [
+            "2015--Kim-K-H-Jeon-J-B-Lee-B-J--Mg-Ca",
+            "2015--Kim-K-H-Jeon-J-B-Lee-B-J--Ca"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify the specific historical pseudopotential-based central pair potential (model name and original reference) that was shown to satisfy the Born mechanical stability criteria for cubic metals\u2014i.e., C11 \u2212 C12 > 0, C44 > 0, and C11 + 2C12 > 0\u2014while obeying the Cauchy relation C12 = C44, in the context of calculating elastic constants for fcc calcium (or similar cubic metals) under homogeneous deformations.",
+        "expected_answer": "Morse potential for cubic metals \u2014 Girifalco & Weizer 1959 (Ca)",
+        "retrieved_answers": [
+            "2007--Vashishta-P-Kalia-R-K-Nakano-A-Rino-J-P--Si-C",
+            "2005--Erhart-P-Albe-K--Si-C-II"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify interatomic potentials suitable for computing solute-induced volumetric misfit (relaxation volumes/size-misfit strains) of dilute Zn and Ca solutes in hcp Mg using atomistic simulations (e.g., LAMMPS). Prioritize validated Mg\u2013Zn\u2013Ca potentials (EAM/MEAM/2NN-MEAM) with fitted ternary cross-interactions that reproduce Mg lattice parameters, elastic constants, solution energies, and solute size misfit; include specific candidates (e.g., Kim et al. MEAM for Mg\u2013Zn\u2013Ca), references, and OpenKIM/NIST availability. If no reliable ternary exists, recommend the best Mg\u2013Zn and Mg\u2013Ca binary potentials for separate calculations, noting accuracy and known limitations for relaxation volume predictions.",
+        "expected_answer": "2NN MEAM for Mg\u2013Zn\u2013Ca \u2014 Jang, Seol, Lee 2019",
+        "retrieved_answers": [
+            "2019--Jang-H-S-Seol-D-Lee-B-J--Mg-Zn-Ca",
+            "2015--Kim-K-H-Jeon-J-B-Lee-B-J--Mg-Ca"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "For the CaCd6 (Cd6Ca) Tsai-type 1/1 cubic approximant (space group Im-3), I need accurate inter-cluster coupling energies between neighboring Tsai clusters (as a function of relative orientation/displacement) to fit an orientational effective Hamiltonian for subsequent Monte Carlo simulations. Which published interatomic potentials for the Ca\u2013Cd binary are validated and recommended for this task\u2014specifically EAM/MEAM parameterizations, empirical oscillating pair potentials (EOPP), bond-order models, or machine-learning potentials\u2014with demonstrated accuracy for CaCd6 structural and thermodynamic properties (lattice parameter, elastic constants, formation energies) and for reproducing orientational energetics? Please cite specific potential names/parameter files and availability (e.g., LAMMPS/OpenKIM), note the temperature/pressure range of validity (~0\u2013600 K, near ambient pressure), and indicate whether any potentials have been used to model cluster-orientation order/disorder in CaCd6 or related Cd\u2013rare-earth Tsai approximants. If no reliable transferable Ca\u2013Cd potential exists, identify recommended alternatives (DFT workflows or ML potentials trained to DFT) for computing the required interaction data.",
+        "expected_answer": "EAM for Ca\u2013Cd (CaCd6) \u2014 Brommer, G\u00e4hler, Mihalkovi\u010d 2007",
+        "retrieved_answers": [
+            "2007--Brommer-P-Gahler-F-Mihalkovic-M--Ca-Cd",
+            "2015--Choudhary-K-Liang-T-Chernatynskiy-A-et-al--Al"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "For classical MD of bulk metallic calcium (elemental Ca) targeting defect formation energies (vacancies, interstitials, stacking faults, surface energies) and thermal properties (phonons, thermal expansion, heat capacity, melting point), which interatomic potentials are recommended instead of a generic universal shifted Lennard-Jones Ca pair potential optimized for dimers? Please identify the most appropriate potential family (e.g., EAM, MEAM, Finnis\u2013Sinclair, Gupta/SMTB, EMT) and any specific Ca parameterizations validated for bulk Ca, with citations and links to LAMMPS/OpenKIM/NIST IPR files, along with their validated phase ranges (fcc/bcc), temperature/pressure applicability, and known limitations.",
+        "expected_answer": "2NN MEAM for Ca \u2014 Kim, Jeon, Lee 2015",
+        "retrieved_answers": [
+            "2015--Kim-K-H-Jeon-J-B-Lee-B-J--Mg-Ca",
+            "2015--Kim-K-H-Jeon-J-B-Lee-B-J--Ca"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "Identify a Modified Embedded Atom Method (MEAM) interatomic potential for the Mg\u2013Ca binary alloy that has been validated against both experiments and DFT and is suitable for modeling solid-solution energetics and defect properties. Specify the recommended parameterization (authors and year), MEAM flavor (e.g., 2NN/3NN), key validation results (mixing/solution energies of Ca in hcp-Mg and Mg in Ca, lattice parameters, elastic constants, stacking-fault energies in hcp-Mg, vacancy/interstitial formation energies and, if available, migration barriers), and provide a citation and source or link to LAMMPS-compatible meam/meamc parameter files. If multiple exist, indicate which is best for solid solutions and point defects.",
+        "expected_answer": "2NN MEAM for Mg\u2013Ca \u2014 Kim, Jeon, Lee 2015",
+        "retrieved_answers": [
+            "2015--Kim-K-H-Jeon-J-B-Lee-B-J--Mg-Ca",
+            "2015--Kim-K-H-Jeon-J-B-Lee-B-J--Ca"
+        ],
+        "parity": "Incorrect"
+    },
+    {
+        "question": "OpenKIM/LAMMPS query: Identify LAMMPS-compatible (pair_style kim) OpenKIM models for elemental calcium that were parametrized to reproduce the Ca2 gas-phase dimer potential energy curve/properties (e.g., bond length r_e, dissociation energy D_e, vibrational frequency \u03c9_e) and do not claim transferability to bulk phases. Prefer simple pair potentials (Morse, Buckingham, Lennard-Jones). Which specific OpenKIM model IDs match these criteria?",
+        "expected_answer": "Lennard-Jones 12-6 (shifted) \"Universal\" for Ca \u2014 Elliott & Akerson 2015",
+        "retrieved_answers": [
+            "2015--Elliott-R-S-Akerson-A--Ca",
+            "2015--Kim-K-H-Jeon-J-B-Lee-B-J--Mg-Ca"
+        ],
+        "parity": "Incorrect"
+    }
+]

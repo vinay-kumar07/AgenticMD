@@ -1,0 +1,122 @@
+[
+  {
+    "question": "You want to compute graphene’s phonon dispersion and report rigorous uncertainty bars and flag out-of-training configurations during an NPT MD run. Which carbon potential should you choose to enable uncertainty quantification in LAMMPS?",
+    "potential": "2020--Wen-M-Tadmor-E-B--C-v2"
+  },
+  {
+    "question": "You need a carbon potential that accurately captures both intra- and interlayer interactions in multilayer graphene to study vacancy effects on thermal conductivity and interlayer friction. Which potential is most appropriate?",
+    "potential": "2019--Wen-M-Tadmor-E-B--C"
+  },
+  {
+    "question": "You plan to simulate graphene growth on a Cu substrate at temperatures exceeding Cu’s melting point (to accelerate simulations) without melting the substrate. Which C–Cu potential was designed for this use case?",
+    "potential": "2015--Zhou-X-W-Ward-D-K-Foster-M-E--C-Cu"
+  },
+  {
+    "question": "For Monte Carlo or MD studies of the diamond–graphite transformation that require long-range carbon interactions (e.g., interplanar graphite binding), which carbon potential should you use?",
+    "potential": "2003--Los-J-H-Fasolino-A--C"
+  },
+  {
+    "question": "You want to analyze how nanoparticle symmetry and contact configuration affect adsorption energy of Pd nanoclusters (2–5 nm) on graphene in large-scale MD. Which Pd–C potential is suitable?",
+    "potential": "2020--Jeong-G-U-Lee-B-J--Pd-C"
+  },
+  {
+    "question": "You are modeling deformation in Ti3AlC2 MAX phases and need a potential that reproduces basal slip, kinking, and plastic anisotropy. Which parameterization is recommended for deformation studies?",
+    "potential": "2021--Plummer-G-Rathod-H-Srivastava-A-et-al--Ti-Al-C"
+  },
+  {
+    "question": "For simulations of Ti3AlC2 MAX phases focused on irradiation tolerance rather than deformation, which parameterization should be used?",
+    "potential": "2019--Plummer-G-Tucker-G-J--Ti-Al-C"
+  },
+  {
+    "question": "You are studying thermal transport across graphene/h-BN stripe superlattices and embedded dot interfaces, comparing zigzag vs armchair configurations. Which Tersoff parameterization for B–C and N–C should you use?",
+    "potential": "2012--Kinaci-A-Haskins-J-B-Sevik-C-Cagin-T--B-N-C"
+  },
+  {
+    "question": "You want to simulate the impact of carbon on screw dislocation mobility in α-Fe at finite temperature, including C-decorated core configurations, using a machine-learning potential (not intended for pure C). Which potential fits this need?",
+    "potential": "2024--Meng-F-S-Shinzato-S-Zhang-S-et-al--Fe-C-BNNP"
+  },
+  {
+    "question": "To quantify carbon-induced strengthening of bcc Fe at the atomic scale and capture realistic screw dislocation core structure and Peierls barrier in Fe–C, which hybrid EAM Fe–C potential should you select?",
+    "potential": "2022--Allera-A-Ribeiro-F-Perez-M-Rodney-D--Fe-C"
+  },
+  {
+    "question": "You need to calculate cementite (Fe3C) elastic constants, surface energies, and melting temperature via two-phase MD. Which Fe–C MEAM parameterization is suitable?",
+    "potential": "2014--Liyanage-L-S-I-Kim-S-G-Houze-J-et-al--Fe-C"
+  },
+  {
+    "question": "You plan large-scale shock MD of hydrocarbons (methane, benzene) and carbon up to 100 GPa and several thousand kelvin, and can compile LAMMPS with the pace package. Which ACE potential should you use?",
+    "potential": "2024--Willman-J-T-Perriot-R-Ticknor-C--C-H"
+  },
+  {
+    "question": "For graphene, CNTs, and fullerenes interacting with C/H/O/N environments where you need reasonable phonons and fracture response in sp2 carbon, which ReaxFF parameter set is recommended?",
+    "potential": "2022--Fthenakis-Z-G-Petsalakis-I-D-Tozzini-V-Lathiotakis-N-N--C-H-O-N"
+  },
+  {
+    "question": "You want to simulate fracture and fatigue in saturated hydrocarbon polymers (e.g., polyethylene) with a reactive potential, but do not need accuracy for unsaturated hydrocarbons or graphite/diamond. Which potential should you choose?",
+    "potential": "2014--Nouranian-S-Tschopp-M-A-Gwaltney-S-R-et-al--CH"
+  },
+  {
+    "question": "For radiation-damage studies in β-SiC requiring accurate displacement threshold energies with a realistic short-range repulsion, which Si–C potential that includes a ZBL-style repulsive correction should be used?",
+    "potential": "1998--Devanathan-R-Diaz-de-la-Rubia-T-Weber-W-J--Si-C"
+  },
+  {
+    "question": "You need to run MD of graphene where you will report uncertainty bounds on stresses and phonon dispersion and automatically flag configurations outside the training set. You also prefer the DUNN carbon potential with a dropout ratio of 0.2. Which potential should you use in LAMMPS?",
+    "potential": "2020--Wen-M-Tadmor-E-B--C-v2"
+  },
+  {
+    "question": "You plan to study vacancy effects on thermal conductivity and interlayer friction in multilayer graphene, requiring accurate short-range intralayer forces and long-range dispersion for interlayer binding. Which potential is appropriate?",
+    "potential": "2019--Wen-M-Tadmor-E-B--C"
+  },
+  {
+    "question": "You want to perform direct MD growth simulations of graphene/CNTs and also capture the graphite-to-diamond transformation at high pressure using a single carbon potential that predicts crystalline growth of correct phases. Which potential should you choose?",
+    "potential": "2015--Zhou-X-W-Ward-D-K-Foster-M-E--C"
+  },
+  {
+    "question": "To capture interplanar binding in graphite and model diamond-to-graphite transformations with a bond-order potential that includes built-in long-range interactions, which carbon potential would you select?",
+    "potential": "2003--Los-J-H-Fasolino-A--C"
+  },
+  {
+    "question": "You want to simulate carbon growth on Cu at temperatures higher than Cu’s melting point without melting the Cu substrate by using a C–Cu potential that deliberately increases Cu cohesive energy (via an added Morse term) while keeping its lattice constant unchanged. Which potential fits this requirement?",
+    "potential": "2015--Zhou-X-W-Ward-D-K-Foster-M-E--C-Cu"
+  },
+  {
+    "question": "For Cu–graphene composites under uniaxial loading, you need a more accurate Cu–C interaction than Lennard-Jones that reproduces phonon dispersion, stacking fault energies, and forces, and is suitable for studying how graphene affects mechanical properties of Cu. Which potential should you use?",
+    "potential": "2021--Agrawal-A-Mirzaeifar-R--Cu-C"
+  },
+  {
+    "question": "You are modeling Ti3AlC2 MAX phase deformation where you must capture plastic anisotropy, basal slip, and kinking; you want the parameterization tuned for deformation studies (not irradiation). Which potential is most suitable?",
+    "potential": "2021--Plummer-G-Rathod-H-Srivastava-A-et-al--Ti-Al-C"
+  },
+  {
+    "question": "For simulations of Ti3AlC2 focused on irradiation tolerance rather than deformation, which Tersoff bond-order parameterization should you choose?",
+    "potential": "2019--Plummer-G-Tucker-G-J--Ti-Al-C"
+  },
+  {
+    "question": "You plan large-scale shock compression simulations of hydrocarbons (methane, benzene) and carbon (diamond, graphite) up to ~100 GPa and 6000–9000 K using an ACE ML potential compatible with the LAMMPS pace package. Which potential file should you use?",
+    "potential": "2024--Willman-J-T-Perriot-R-Ticknor-C--C-H"
+  },
+  {
+    "question": "To model high-temperature gas-phase oxidation of hydrocarbons (e.g., methane/O2) with reactive chemistry and no predefined bonding, which ReaxFF parameter set should be used?",
+    "potential": "2008--Chenoweth-K-van-Duin-A-C-T-Goddard-W-A--C-H-O"
+  },
+  {
+    "question": "You need a reactive potential for saturated hydrocarbons (sp3 carbons) to study polymer fracture and PVT behavior of alkanes, knowing it is not suitable for unsaturated hydrocarbons or diamond/graphite. Which MEAM parameterization should you employ?",
+    "potential": "2014--Nouranian-S-Tschopp-M-A-Gwaltney-S-R-et-al--CH"
+  },
+  {
+    "question": "You intend to simulate screw dislocation glide in bcc Fe with carbon decoration and need an Fe–C potential that improves the screw core structure and Peierls barrier versus typical EAMs, recommended for dilute C settings. Which potential fits?",
+    "potential": "2022--Allera-A-Ribeiro-F-Perez-M-Rodney-D--Fe-C"
+  },
+  {
+    "question": "For α-Fe–C simulations where accurate per-atom stress evaluation is critical (e.g., dislocation mobility with C), which ML Fe–C potential shows advantages for atomic stress computation?",
+    "potential": "2024--Meng-F-S-Shinzato-S-Zhang-S-et-al--Fe-C-DP"
+  },
+  {
+    "question": "For broad α-Fe–C studies (including cementite and interfaces) where overall accuracy across many properties is prioritized, and you do not plan to simulate pure carbon, which ML potential is preferred?",
+    "potential": "2024--Meng-F-S-Shinzato-S-Zhang-S-et-al--Fe-C-BNNP"
+  },
+  {
+    "question": "You will compute displacement threshold energies and knock-on damage in β-SiC and require a SiC potential that augments Tersoff with a realistic ZBL short-range repulsion. Which potential should you select?",
+    "potential": "1998--Devanathan-R-Diaz-de-la-Rubia-T-Weber-W-J--Si-C"
+  }
+]

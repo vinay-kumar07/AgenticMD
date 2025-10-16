@@ -1,0 +1,122 @@
+[
+  {
+    "question": "You plan to compute the melting point of bcc potassium via a solid–liquid coexistence simulation at ambient pressure in LAMMPS. Which potential should you use, and what melting temperature should you expect if the model is performing correctly?",
+    "potential": "2016--Nichol-A-Ackland-G-J--K"
+  },
+  {
+    "question": "For a 0 K study of bcc K that needs to reproduce the lattice parameter, elastic moduli, cohesive energy, and vacancy formation energy, which potassium potential is most appropriate?",
+    "potential": "2016--Nichol-A-Ackland-G-J--K"
+  },
+  {
+    "question": "Your bcc K crystal becomes unstable at low temperature with a trial model. Which K potential explicitly maintains bcc stability and has been validated by correctly predicting K’s melting behavior?",
+    "potential": "2016--Nichol-A-Ackland-G-J--K"
+  },
+  {
+    "question": "You want to demonstrate that a K potential fitted only to static crystalline properties can still predict finite-temperature thermodynamics like melting points. Which potential provides this transferability?",
+    "potential": "2016--Nichol-A-Ackland-G-J--K"
+  },
+  {
+    "question": "You need an EAM/FS potential file for K (pair_style eam/fs in LAMMPS). Which publication provides K.eam.fs suitable for this purpose?",
+    "potential": "2016--Nichol-A-Ackland-G-J--K"
+  },
+  {
+    "question": "In an openKIM-enabled heterogeneous simulation, you require K nonbonded interactions that are Lorentz–Berthelot mixed and have a continuous energy at the cutoff. Which parameterization should you select?",
+    "potential": "2015--Elliott-R-S-Akerson-A--K"
+  },
+  {
+    "question": "You are considering the 'universal' shifted Lennard-Jones K parameters to model bulk bcc potassium elasticity. What key limitation of this model should make you cautious?",
+    "potential": "2015--Elliott-R-S-Akerson-A--K"
+  },
+  {
+    "question": "For a gas-phase K2 dimer test where you need to reproduce the equilibrium separation and bond dissociation energy with a simple LJ form via KIM, which K parameter set is intended for this?",
+    "potential": "2015--Elliott-R-S-Akerson-A--K"
+  },
+  {
+    "question": "To assess whether KCl prefers the B1 (NaCl) or B2 (CsCl) structure using an atomistic model that encodes ionic sizes via intrinsic bond lengths, which potential file would you use in LAMMPS?",
+    "potential": "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I"
+  },
+  {
+    "question": "You want to explore structure-determining factors beyond hard-sphere radius ratios for KI and KBr, including possible B3 (zinc-blende) stability. Which calibrated potential database is designed for such B1/B2/B3 studies?",
+    "potential": "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I"
+  },
+  {
+    "question": "For simulating molten LiCl–KCl across compositions in LAMMPS, which machine-learning potential trained at the DFT-SCAN level should you use, and what experimental validation supports its accuracy?",
+    "potential": "2022--Guo-J-Ward-L-Babuji-Y-et-al--Li-K-Cl"
+  },
+  {
+    "question": "You intend to simulate pure LiCl with the LiCl–KCl GAP. What training-data limitation of this model requires caution, especially at very low LiCl content?",
+    "potential": "2022--Guo-J-Ward-L-Babuji-Y-et-al--Li-K-Cl"
+  },
+  {
+    "question": "For a classical study of cubic potassium’s equation of state and elastic constants under arbitrary deformation, which Morse-based model claims agreement with experiment and satisfaction of mechanical stability conditions?",
+    "potential": "1959--Girifalco-L-A-Weizer-V-G--K"
+  },
+  {
+    "question": "You need a composition-transferable model that reproduces the experimentally measured structure of a LiCl–KCl eutectic that was not explicitly included in training. Which potential should you choose?",
+    "potential": "2022--Guo-J-Ward-L-Babuji-Y-et-al--Li-K-Cl"
+  },
+  {
+    "question": "If you want to parameterize a simple analytic potential for K using only the energy of vaporization, lattice constant, and compressibility, which literature approach demonstrates this methodology?",
+    "potential": "1959--Girifalco-L-A-Weizer-V-G--K"
+  },
+  {
+    "question": "To compute the melting point of bcc potassium via solid–liquid coexistence at ambient pressure, which K potential should you use to obtain a realistic value (~336 K) and stable bcc structure?",
+    "potential": "2016--Nichol-A-Ackland-G-J--K"
+  },
+  {
+    "question": "You need a quick, generic K interaction with continuous energy at the cutoff to prototype K–X mixtures via Lorentz–Berthelot mixing in a KIM-enabled LAMMPS run. Which model should you choose?",
+    "potential": "2015--Elliott-R-S-Akerson-A--K"
+  },
+  {
+    "question": "For bulk bcc potassium where accurate cohesive energy, lattice parameter, elastic moduli, and vacancy formation energy are important, which potential was explicitly fit to these static properties?",
+    "potential": "2016--Nichol-A-Ackland-G-J--K"
+  },
+  {
+    "question": "You plan to model cubic-metal deformations of potassium and compare equation of state and elastic constants to experiment using a simple pair potential. Which historical Morse-parametrized potential is suitable?",
+    "potential": "1959--Girifalco-L-A-Weizer-V-G--K"
+  },
+  {
+    "question": "To explore whether KCl prefers B1 (NaCl), B2 (CsCl), or B3 (zinc-blende) lattices based on intrinsic bond lengths rather than hard-sphere radii, which potential file should you use?",
+    "potential": "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I"
+  },
+  {
+    "question": "You want a composition-transferable potential for molten LiCl–KCl mixtures, trained with DFT-SCAN and validated against high-energy XRD (including compositions not explicitly in training). Which potential fits?",
+    "potential": "2022--Guo-J-Ward-L-Babuji-Y-et-al--Li-K-Cl"
+  },
+  {
+    "question": "You intend to simulate pure LiCl melt properties. Which provided potential should you avoid or use with caution because its training did not include pure LiCl?",
+    "potential": "2022--Guo-J-Ward-L-Babuji-Y-et-al--Li-K-Cl"
+  },
+  {
+    "question": "For potassium simulations where bcc stability at low temperatures must be preserved while enabling realistic melting without fitting to finite-temperature data, which potential methodology is indicated?",
+    "potential": "2016--Nichol-A-Ackland-G-J--K"
+  },
+  {
+    "question": "In LAMMPS, you prefer an EAM/fs-formatted potential file for potassium. Which dataset entry provides K.eam.fs files?",
+    "potential": "2016--Nichol-A-Ackland-G-J--K"
+  },
+  {
+    "question": "You need to assess whether a generic LJ model is appropriate for predicting bulk elastic constants of solid potassium. Which potential’s notes indicate it was only fit to dimer properties and may not be reliable for bulk?",
+    "potential": "2015--Elliott-R-S-Akerson-A--K"
+  },
+  {
+    "question": "To examine B1–B2 structural stability trends across alkali halides including KCl using a calibrated potential with independent intrinsic bond lengths, which potential should you select?",
+    "potential": "2011--Zhou-X-W-Doty-F-P-Yang-P--Li-Na-K-Rb-Cs-F-Cl-Br-I"
+  },
+  {
+    "question": "For modeling cubic potassium under various deformations while satisfying mechanical stability conditions for both fcc and bcc phases, which Morse-based potential is documented to do so?",
+    "potential": "1959--Girifalco-L-A-Weizer-V-G--K"
+  },
+  {
+    "question": "You wish to calculate vacancy formation energy in potassium in alignment with fitted training data. Which K potential was fit to vacancy energy and is suitable?",
+    "potential": "2016--Nichol-A-Ackland-G-J--K"
+  },
+  {
+    "question": "When simulating K-containing mixtures where cross interactions are constructed automatically via Lorentz–Berthelot rules and continuous cutoffs are required in KIM-enabled LAMMPS runs, which potential should be used?",
+    "potential": "2015--Elliott-R-S-Akerson-A--K"
+  },
+  {
+    "question": "You plan to simulate the eutectic LiCl–KCl composition that was not explicitly included in training and compare to experimental structure factors. Which machine-learning potential is appropriate?",
+    "potential": "2022--Guo-J-Ward-L-Babuji-Y-et-al--Li-K-Cl"
+  }
+]

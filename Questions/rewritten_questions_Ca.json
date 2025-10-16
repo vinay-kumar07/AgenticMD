@@ -1,0 +1,62 @@
+[
+    {
+        "question": "OpenKIM/LAMMPS: I need a simple, generic pair potential for elemental calcium that can be quickly parameterized to match the Ca2 dimer equilibrium bond length (r_e) and dissociation energy (D_e), and that guarantees a continuous energy at the cutoff (preferably with a shifted/smoothed cutoff). Which specific OpenKIM model (name/ID)\u2014ideally a Morse-type pair potential supporting KIM species 'Ca'\u2014should I choose?",
+        "potential": "Lennard-Jones 12-6 (shifted) \"Universal\" for Ca \u2014 Elliott & Akerson 2015"
+    },
+    {
+        "question": "For bulk fcc calcium (Ca, Fm-3m) at 0 K and ambient pressure, is the universal shifted Lennard-Jones (USLJ) Ca parameterization suitable for calculating metallic properties such as vacancy formation energy and elastic constants (C11, C12, C44, bulk modulus), or should I use a many-body metal potential instead? Please recommend specific Ca potentials (e.g., EAM/MEAM/Finnis\u2013Sinclair) that have been fitted/validated for fcc Ca, with published benchmarks for lattice constant, cohesive energy, elastic constants, and vacancy formation/migration energies. Include citations and download links (OpenKIM/LAMMPS), note any temperature/phase limitations, and comment on expected accuracy versus DFT/experiment.",
+        "potential": "2NN MEAM for Ca \u2014 Kim, Jeon, Lee 2015"
+    },
+    {
+        "question": "For face-centered cubic calcium (Ca), if I need a simple three-parameter pair potential fitted to the cohesive (vaporization) energy, equilibrium lattice constant a0, and isothermal compressibility (bulk modulus B0) to reproduce the equation of state E(V) and elastic constants (C11, C12, C44), which functional form is most appropriate\u2014Morse, Mie/Lennard\u2011Jones (m\u2013n), or Buckingham (exp\u20116)\u2014for a metallic system like Ca (excluding many-body models such as EAM/Finnis\u2013Sinclair), and why?",
+        "potential": "Morse potential for cubic metals \u2014 Girifalco & Weizer 1959 (Ca)"
+    },
+    {
+        "question": "I\u2019m modeling the low-temperature order\u2013disorder transition in the 1/1 cubic approximant CaCd6, driven by reorientation of the central tetrahedra in Tsai-type clusters, and I need an interatomic potential for Ca\u2013Cd that accurately captures orientational energetics and the long-range Friedel oscillations typical of Cd\u2013Ca Hume\u2013Rothery alloys. Which specific, validated Ca\u2013Cd potential/parameterization should I use (e.g., the Mihalkovi\u010d\u2013Widom Empirical Oscillating Pair Potentials), and where can I find the parameters and an implementation (LAMMPS) plus references/benchmarks showing it reproduces cluster-orientation interactions and the low-T transition sufficiently to fit an effective orientational Hamiltonian?",
+        "potential": "EAM for Ca\u2013Cd (CaCd6) \u2014 Brommer, G\u00e4hler, Mihalkovi\u010d 2007"
+    },
+    {
+        "question": "Identify the most reliable LAMMPS-compatible interatomic potential (EAM/MEAM/2NN-MEAM/ReaxFF/BOP) for magnesium\u2013calcium (Mg\u2013Ca) alloys that can accurately model both solid solutions and intermetallics in atomistic MD/MC simulations. Compare published candidates and their validation against experiment and DFT for:\n- Structural: hcp-Mg and fcc-Ca lattice parameters and elastic constants (target \u22645\u201310% error)\n- Thermodynamic: cohesive and formation energies, heats of mixing across composition, phase stability of Mg2Ca (C14 Laves) and related phases, melting behavior (\u22480\u20131000 K) (target \u226450\u2013100 meV/atom error)\n- Defects: vacancy/interstitial formation and migration energies, stacking-fault energies in hcp-Mg, and surface energies\n\nRecommend a specific potential with justification, summarize known limitations (e.g., SFE accuracy, melting point bias, phase stability errors), and provide citations (DOIs) plus links or filenames to the LAMMPS parameter files. Include any head-to-head benchmarks for Mg\u2013Ca (e.g., 2NN-MEAM parameterizations vs EAM cross-interactions) published up to 2025.",
+        "potential": "2NN MEAM for Mg\u2013Ca \u2014 Kim, Jeon, Lee 2015"
+    },
+    {
+        "question": "Identify the interatomic potential specifically developed for the ternary Mg\u2013Zn\u2013Ca system that has been validated against DFT to reproduce composition-dependent generalized stacking-fault energies (GSFE/gamma surfaces) in hcp Mg (basal {0001}, prismatic {10-10}, pyramidal {10-11}/{11-22}) and to capture Zn/Ca segregation (binding energies, segregation profiles) to the {10-12} twin boundary. Which potential (name/type: EAM/MEAM/MLP) meets these criteria, and what is its primary reference or repository?",
+        "potential": "2NN MEAM for Mg\u2013Zn\u2013Ca \u2014 Jang, Seol, Lee 2019"
+    },
+    {
+        "question": "I need an OpenKIM calcium parameterization for a quick exploratory MD of a Ca\u2013X mixture where cross nonbonded terms will be generated via Lorentz\u2013Berthelot mixing (i.e., requires per-element Lennard\u2013Jones \u03b5 and \u03c3). Which specific OpenKIM LJ model(s) for Ca are appropriate and LB-compatible (please include model names/IDs, e.g., universal LJ parameter sets like LJ_ElliottAkerson_2015_Universal), and are there caveats compared to Ca EAM/BOP models that don\u2019t support LB mixing?",
+        "potential": "Lennard-Jones 12-6 (shifted) \"Universal\" for Ca \u2014 Elliott & Akerson 2015"
+    },
+    {
+        "question": "Recommend a LAMMPS-compatible interatomic potential for metallic calcium (Ca) that accurately models deformation-related properties. Specifically, identify validated EAM/MEAM (or other) potentials for pure Ca that reproduce:\n- Bulk: fcc lattice parameter, cohesive energy, elastic constants, equation of state, thermal expansion\n- Defects: vacancy/interstitial formation energies, surface energies, stacking-fault energies, dislocation core structures\n- Thermal/phase behavior: melting point, phonon dispersion, and fcc\u2192bcc stability at elevated T\n\nProvide:\n- Exact potential names, parameter files (.eam, .eam.fs, MEAM libraries) and where to obtain them (NIST IPR, OpenKIM, LAMMPS potentials repo)\n- Required LAMMPS pair_style/pair_coeff usage\n- Validation data/citations and known limitations for plasticity simulations (e.g., SFE accuracy, melting bias, phase stability issues)",
+        "potential": "2NN MEAM for Ca \u2014 Kim, Jeon, Lee 2015"
+    },
+    {
+        "question": "Using LAMMPS, I need a validated interatomic potential for the Mg\u2013Ca binary that reproduces structural, thermodynamic, and defect properties of Mg, Ca, and their intermetallics (e.g., Mg2Ca Laves). Which specific parameter sets are recommended\u2014preferably 2NN-MEAM or EAM\u2014with explicit file names for the library (library.meam) and the Mg\u2013Ca alloy parameter file, and with documented accuracy for:\n- Structural: lattice parameters and elastic constants\n- Thermodynamic: cohesive/formation energies and relative phase stability\n- Defects: vacancy/interstitial formation and migration, stacking-fault and surface energies\n\nPlease provide download links (e.g., NIST Interatomic Potentials Repository or LAMMPS/potentials), the exact pair_style/pair_coeff usage, citation(s), and any known limitations (e.g., phases covered, temperature range, poor defect energetics).",
+        "potential": "2NN MEAM for Mg\u2013Ca \u2014 Kim, Jeon, Lee 2015"
+    },
+    {
+        "question": "Identify the specific historical pseudopotential-based central pair potential (model name and original reference) that was shown to satisfy the Born mechanical stability criteria for cubic metals\u2014i.e., C11 \u2212 C12 > 0, C44 > 0, and C11 + 2C12 > 0\u2014while obeying the Cauchy relation C12 = C44, in the context of calculating elastic constants for fcc calcium (or similar cubic metals) under homogeneous deformations.",
+        "potential": "Morse potential for cubic metals \u2014 Girifalco & Weizer 1959 (Ca)"
+    },
+    {
+        "question": "Identify interatomic potentials suitable for computing solute-induced volumetric misfit (relaxation volumes/size-misfit strains) of dilute Zn and Ca solutes in hcp Mg using atomistic simulations (e.g., LAMMPS). Prioritize validated Mg\u2013Zn\u2013Ca potentials (EAM/MEAM/2NN-MEAM) with fitted ternary cross-interactions that reproduce Mg lattice parameters, elastic constants, solution energies, and solute size misfit; include specific candidates (e.g., Kim et al. MEAM for Mg\u2013Zn\u2013Ca), references, and OpenKIM/NIST availability. If no reliable ternary exists, recommend the best Mg\u2013Zn and Mg\u2013Ca binary potentials for separate calculations, noting accuracy and known limitations for relaxation volume predictions.",
+        "potential": "2NN MEAM for Mg\u2013Zn\u2013Ca \u2014 Jang, Seol, Lee 2019"
+    },
+    {
+        "question": "For the CaCd6 (Cd6Ca) Tsai-type 1/1 cubic approximant (space group Im-3), I need accurate inter-cluster coupling energies between neighboring Tsai clusters (as a function of relative orientation/displacement) to fit an orientational effective Hamiltonian for subsequent Monte Carlo simulations. Which published interatomic potentials for the Ca\u2013Cd binary are validated and recommended for this task\u2014specifically EAM/MEAM parameterizations, empirical oscillating pair potentials (EOPP), bond-order models, or machine-learning potentials\u2014with demonstrated accuracy for CaCd6 structural and thermodynamic properties (lattice parameter, elastic constants, formation energies) and for reproducing orientational energetics? Please cite specific potential names/parameter files and availability (e.g., LAMMPS/OpenKIM), note the temperature/pressure range of validity (~0\u2013600 K, near ambient pressure), and indicate whether any potentials have been used to model cluster-orientation order/disorder in CaCd6 or related Cd\u2013rare-earth Tsai approximants. If no reliable transferable Ca\u2013Cd potential exists, identify recommended alternatives (DFT workflows or ML potentials trained to DFT) for computing the required interaction data.",
+        "potential": "EAM for Ca\u2013Cd (CaCd6) \u2014 Brommer, G\u00e4hler, Mihalkovi\u010d 2007"
+    },
+    {
+        "question": "For classical MD of bulk metallic calcium (elemental Ca) targeting defect formation energies (vacancies, interstitials, stacking faults, surface energies) and thermal properties (phonons, thermal expansion, heat capacity, melting point), which interatomic potentials are recommended instead of a generic universal shifted Lennard-Jones Ca pair potential optimized for dimers? Please identify the most appropriate potential family (e.g., EAM, MEAM, Finnis\u2013Sinclair, Gupta/SMTB, EMT) and any specific Ca parameterizations validated for bulk Ca, with citations and links to LAMMPS/OpenKIM/NIST IPR files, along with their validated phase ranges (fcc/bcc), temperature/pressure applicability, and known limitations.",
+        "potential": "2NN MEAM for Ca \u2014 Kim, Jeon, Lee 2015"
+    },
+    {
+        "question": "Identify a Modified Embedded Atom Method (MEAM) interatomic potential for the Mg\u2013Ca binary alloy that has been validated against both experiments and DFT and is suitable for modeling solid-solution energetics and defect properties. Specify the recommended parameterization (authors and year), MEAM flavor (e.g., 2NN/3NN), key validation results (mixing/solution energies of Ca in hcp-Mg and Mg in Ca, lattice parameters, elastic constants, stacking-fault energies in hcp-Mg, vacancy/interstitial formation energies and, if available, migration barriers), and provide a citation and source or link to LAMMPS-compatible meam/meamc parameter files. If multiple exist, indicate which is best for solid solutions and point defects.",
+        "potential": "2NN MEAM for Mg\u2013Ca \u2014 Kim, Jeon, Lee 2015"
+    },
+    {
+        "question": "OpenKIM/LAMMPS query: Identify LAMMPS-compatible (pair_style kim) OpenKIM models for elemental calcium that were parametrized to reproduce the Ca2 gas-phase dimer potential energy curve/properties (e.g., bond length r_e, dissociation energy D_e, vibrational frequency \u03c9_e) and do not claim transferability to bulk phases. Prefer simple pair potentials (Morse, Buckingham, Lennard-Jones). Which specific OpenKIM model IDs match these criteria?",
+        "potential": "Lennard-Jones 12-6 (shifted) \"Universal\" for Ca \u2014 Elliott & Akerson 2015"
+    }
+]
