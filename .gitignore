@@ -5,3 +5,5 @@ logs/
 docs.lammps.org/
 .deepeval/
 .vscode/
+data/
+generated_scripts/
