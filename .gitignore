@@ -7,3 +7,4 @@ docs.lammps.org/
 .vscode/
 data/
 generated_scripts/
+server/runs/
