@@ -1,0 +1,41 @@
+
+units           metal
+dimension       3
+boundary        p p p
+atom_style      atomic
+
+# Define pair style before any coefficients may be read/set
+pair_style      eam
+
+# Read initial configuration
+read_data       /Users/vinaykumar/Desktop/AgenticMD/data/Structures/Cu.data
+Reading data file ...
+  triclinic box = (0 0 0) to (7.1548613 7.1548613 7.1548613) with tilt (0 0 0)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  32 atoms
+  read_data CPU = 0.003 seconds
+
+# Assign EAM potential (Cu)
+pair_coeff      * * /Users/vinaykumar/Desktop/AgenticMD/data/Potentials/Cu_u3.eam
+Reading eam potential file /Users/vinaykumar/Desktop/AgenticMD/data/Potentials/Cu_u3.eam with DATE: 2007-06-11
+
+# Neighbor settings
+neighbor        2.0 bin
+neigh_modify    delay 0 every 1 check yes
+
+# Time integration parameters
+timestep        0.001      # ps (1 fs)
+
+# Initialize velocities at 300 K
+velocity        all create 300.0 4928459 mom yes rot yes dist gaussian
+
+# NPT ensemble at 300 K and 1 atm (1.01325 bar in metal units)
+fix             1 all npt temp 300.0 300.0 0.1 iso 1.01325 1.01325 1.0
+
+# Thermodynamics
+thermo          1000
+thermo_style    custom step time temp press pe ke etotal vol lx l
+ERROR: Unknown keyword 'l' in thermo_style custom command (src/thermo.cpp:1093)
+Last input line: thermo_style custom step time temp press pe ke etotal vol lx l 
+                                                                              ^

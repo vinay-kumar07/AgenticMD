@@ -1,0 +1,34 @@
+# LAMMPS input script: NPT simulation of Cu at 300 K and 1 atm for 100 ps
+
+log log.lammps
+
+units           metal
+dimension       3
+boundary        p p p
+atom_style      atomic
+
+# Define pair style before any coefficients may be read/set
+pair_style      eam
+
+# Read initial configuration
+read_data       /Users/vinaykumar/Desktop/AgenticMD/data/Structures/Cu.data
+
+# Assign EAM potential (Cu)
+pair_coeff      * * /Users/vinaykumar/Desktop/AgenticMD/data/Potentials/Cu_u3.eam
+
+# Neighbor settings
+neighbor        2.0 bin
+neigh_modify    delay 0 every 1 check yes
+
+# Time integration parameters
+timestep        0.001      # ps (1 fs)
+
+# Initialize velocities at 300 K
+velocity        all create 300.0 4928459 mom yes rot yes dist gaussian
+
+# NPT ensemble at 300 K and 1 atm (1.01325 bar in metal units)
+fix             1 all npt temp 300.0 300.0 0.1 iso 1.01325 1.01325 1.0
+
+# Thermodynamics
+thermo          1000
+thermo_style    custom step time temp press pe ke etotal vol lx ly lz

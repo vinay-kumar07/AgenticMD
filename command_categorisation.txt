@@ -1,0 +1,3 @@
+mandotry = units, dimension, boundary, atom_style, read_data, pair_style, pair_coeff, minimize, fix, unfix, run
+
+optional = mass, neighbour, neigh_modify, thermo, thermo_style, reset_timestep, min_style, min_modify, variable, timestep, dump, dump_modify, write_data, write_restart 

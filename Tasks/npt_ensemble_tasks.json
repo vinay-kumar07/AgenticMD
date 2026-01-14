@@ -1,0 +1,58 @@
+[
+    {
+        "problem_description": "Perform an NPT ensemble simulation on a system of Aluminium atoms at 300K and 1 atm pressure for 100 ps.",
+        "input_data_path": "/Users/vinaykumar/Desktop/AgenticMD/data/Structures/Al.data",
+        "interatomic_potential": "eam/alloy",
+        "interatomic_potential_path": "/Users/vinaykumar/Desktop/AgenticMD/data/Potentials/Al99.eam.alloy",
+        "output_description": "The final temperature and pressure of the system after the NPT simulation should be close to the target values of 300K and 1 atm, respectively. The output should include a log file with thermodynamic data and a dump file with atomic configurations at specified intervals."
+    },
+    {
+        "problem_description": "Perform an NPT ensemble simulation on a system of Copper atoms at 300K and 1 atm pressure for 100 ps.",
+        "input_data_path": "/Users/vinaykumar/Desktop/AgenticMD/data/Structures/Cu.data",
+        "interatomic_potential": "eam",
+        "interatomic_potential_path": "/Users/vinaykumar/Desktop/AgenticMD/data/Potentials/Cu_u3.eam",
+        "output_description": "The final temperature and pressure of the system after the NPT simulation should be close to the target values of 300K and 1 atm, respectively. The output should include a log file with thermodynamic data and a dump file with atomic configurations at specified intervals."
+    },
+    {
+        "problem_description": "Perform an NPT ensemble simulation on a system of Iron atoms at 300K and 1 atm pressure for 100 ps.",
+        "input_data_path": "/Users/vinaykumar/Desktop/AgenticMD/data/Structures/Fe.data",
+        "interatomic_potential": "eam/fs",
+        "interatomic_potential_path": "/Users/vinaykumar/Desktop/AgenticMD/data/Potentials/Fe_mm.eam.fs",
+        "output_description": "The final temperature and pressure of the system after the NPT simulation should be close to the target values of 300K and 1 atm, respectively. The output should include a log file with thermodynamic data and a dump file with atomic configurations at specified intervals."
+    },
+    {
+        "problem_description": "Perform an NPT ensemble simulation on a system of graphene atoms at 300K and 1 atm pressure for 100 ps.",
+        "input_data_path": "/Users/vinaykumar/Desktop/AgenticMD/data/Structures/graphene.data",
+        "interatomic_potential": "airebo",
+        "interatomic_potential_path": "/Users/vinaykumar/Desktop/AgenticMD/data/Potentials/CH.airebo",
+        "output_description": "The final temperature and pressure of the system after the NPT simulation should be close to the target values of 300K and 1 atm, respectively. The output should include a log file with thermodynamic data and a dump file with atomic configurations at specified intervals."
+    },
+    {
+        "problem_description": "Perform an NPT ensemble simulation on a system of Nickel atoms at 300K and 1 atm pressure for 100 ps.",
+        "input_data_path": "/Users/vinaykumar/Desktop/AgenticMD/data/Structures/Ni.data",
+        "interatomic_potential": "eam/alloy",
+        "interatomic_potential_path": "/Users/vinaykumar/Desktop/AgenticMD/data/Potentials/Ni99.eam.alloy",
+        "output_description": "The final temperature and pressure of the system after the NPT simulation should be close to the target values of 300K and 1 atm, respectively. The output should include a log file with thermodynamic data and a dump file with atomic configurations at specified intervals."
+    },
+    {
+        "problem_description": "Perform an NPT ensemble simulation on a system of NiAlH molecules at 300K and 1 atm pressure for 100 ps.",
+        "input_data_path": "/Users/vinaykumar/Desktop/AgenticMD/data/Structures/NiAlH.data",
+        "interatomic_potential": "eam/alloy",
+        "interatomic_potential_path": "/Users/vinaykumar/Desktop/AgenticMD/data/Potentials/NiAlH_jea.eam.alloy",
+        "output_description": "The final temperature and pressure of the system after the NPT simulation should be close to the target values of 300K and 1 atm, respectively. The output should include a log file with thermodynamic data and a dump file with atomic configurations at specified intervals."
+    },
+    {
+        "problem_description": "Perform an NPT ensemble simulation on a system of Silicon atoms at 300K and 1 atm pressure for 100 ps.",
+        "input_data_path": "/Users/vinaykumar/Desktop/AgenticMD/data/Structures/Si.data",
+        "interatomic_potential": "sw",
+        "interatomic_potential_path": "/Users/vinaykumar/Desktop/AgenticMD/data/Potentials/Si.sw",
+        "output_description": "The final temperature and pressure of the system after the NPT simulation should be close to the target values of 300K and 1 atm, respectively. The output should include a log file with thermodynamic data and a dump file with atomic configurations at specified intervals."
+    },
+    {
+        "problem_description": "Perform an NPT ensemble simulation on a system of SiC molecules atoms at 300K and 1 atm pressure for 100 ps.",
+        "input_data_path": "/Users/vinaykumar/Desktop/AgenticMD/data/Structures/SiC.data",
+        "interatomic_potential": "tersoff",
+        "interatomic_potential_path": "/Users/vinaykumar/Desktop/AgenticMD/data/Potentials/SiC.tersoff",
+        "output_description": "The final temperature and pressure of the system after the NPT simulation should be close to the target values of 300K and 1 atm, respectively. The output should include a log file with thermodynamic data and a dump file with atomic configurations at specified intervals."
+    }
+]

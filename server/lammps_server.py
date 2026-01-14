@@ -20,7 +20,7 @@ def run_lammps():
         return jsonify({"error": "missing script"}), 400
 
     # Create unique ID and run folder
-    run_id = str(uuid.uuid4())
+    run_id = (request.args.get("run_id") or "").strip()
     run_dir = os.path.join(RUNS_DIR, run_id)
     os.makedirs(run_dir, exist_ok=True)
 
@@ -44,7 +44,7 @@ def run_lammps():
             "stderr": result.stderr,
             "returncode": result.returncode,
             "log_path": f"{run_dir}/log.lammps"
-        })
+        }), 200
     except subprocess.TimeoutExpired:
         shutil.rmtree(run_dir, ignore_errors=True)
         return jsonify({"error": "LAMMPS run timed out"}), 504
