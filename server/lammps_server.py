@@ -1,56 +1,45 @@
-# backend_service.py
 from flask import Flask, request, jsonify
 import subprocess
-import tempfile, os, uuid, shutil
+import os
 
 app = Flask(__name__)
 
-RUNS_DIR = "runs"
-os.makedirs(RUNS_DIR, exist_ok=True)
 
 @app.post("/run_lammps")
 def run_lammps():
-    if 'file' in request.files:
-        file = request.files['file']
-        input_data = file.read().decode()
-    else:
-        input_data = request.json.get("input_script")
+    body = request.get_json()
+    if not body:
+        return jsonify({"error": "JSON body required"}), 400
 
-    if not input_data:
-        return jsonify({"error": "missing script"}), 400
+    work_dir = body.get("work_dir", "").strip()
+    script   = body.get("script", "").strip()   # filename only, e.g. "script_attempt1.in"
 
-    # Create unique ID and run folder
-    run_id = (request.args.get("run_id") or "").strip()
-    run_dir = os.path.join(RUNS_DIR, run_id)
-    os.makedirs(run_dir, exist_ok=True)
-
-    input_path = os.path.join(run_dir, "input.in")
-
-    # Write input script
-    with open(input_path, "w") as f:
-        f.write(input_data)
+    if not work_dir or not script:
+        return jsonify({"error": "work_dir and script are required"}), 400
+    if not os.path.isdir(work_dir):
+        return jsonify({"error": f"work_dir does not exist: {work_dir}"}), 400
+    if not os.path.isfile(os.path.join(work_dir, script)):
+        return jsonify({"error": f"script not found in work_dir: {script}"}), 400
 
     try:
-        # Run LAMMPS inside that folder
         result = subprocess.run(
-            ["lmp_mpi", "-in", "input.in"],
-            cwd=run_dir,
-            capture_output=True, text=True, timeout=600
+            ["lmp_mpi", "-in", script],
+            cwd=work_dir,
+            capture_output=True,
+            text=True,
+            timeout=600,
         )
-
         return jsonify({
-            "run_id": run_id,
-            "stdout": result.stdout,
-            "stderr": result.stderr,
+            "work_dir":   work_dir,
+            "stdout":     result.stdout,
+            "stderr":     result.stderr,
             "returncode": result.returncode,
-            "log_path": f"{run_dir}/log.lammps"
         }), 200
     except subprocess.TimeoutExpired:
-        shutil.rmtree(run_dir, ignore_errors=True)
         return jsonify({"error": "LAMMPS run timed out"}), 504
     except Exception as e:
-        shutil.rmtree(run_dir, ignore_errors=True)
         return jsonify({"error": str(e)}), 500
+
 
 if __name__ == "__main__":
     app.run(port=8000)
