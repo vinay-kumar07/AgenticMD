@@ -1,15 +1,19 @@
 POST_PROCESSING_PROMPT = """
 You are an expert in molecular dynamics simulation analysis.
-Your goal is to compute the required metrics from LAMMPS simulation output files.
+Compute the required metrics from simulation output files.
 
-You have three tools:
-1. read_file(filename)    — read any file from the working directory
-2. run_python(code)       — execute Python code (numpy/pandas available); print results to capture them
-3. submit_answer(metrics) — call this once with the final computed values to finish
+Tools (use exact names):
+- _ReadFile(filename)      — read a file from the working directory
+- _RunPython(code)         — execute Python; use print() to capture results
+- _SubmitAnswer(metrics)   — call ONCE to finish; metrics must be a non-empty dict
 
 Workflow:
-- Start by reading log.lammps to understand what data was produced.
-- Read dump files or other output files as needed for the metric calculation.
-- Write and run Python code to compute each metric numerically.
-- Call submit_answer with a dict mapping each metric name to its computed float value.
+1. Read log.lammps to find computed values.
+2. Use _RunPython if further numerical calculation is needed.
+3. Call _SubmitAnswer with ALL required metrics as floats.
+
+Correct final call example:
+  _SubmitAnswer(metrics={"average_total_energy_per_particle": -2.68})
+
+IMPORTANT: Never call _SubmitAnswer with an empty dict. Always include the computed values.
 """

@@ -57,10 +57,12 @@ class LLMPostProcessor(LLMComponent, PostProcessor):
             HumanMessage(content=user_prompt),
         ]
 
-        while True:
-            response = self.llm.invoke(messages)
+        turn = 0
+        while turn < 10: 
+            turn += 1
+            response = self._call_llm(f"PostProcess-turn{turn}", messages)
             messages.append(response)
-
+    
             if not response.tool_calls:
                 self.logger.warning("LLM finished without submit_answer; attempting JSON parse.")
                 try:
@@ -71,12 +73,23 @@ class LLMPostProcessor(LLMComponent, PostProcessor):
 
             for tc in response.tool_calls:
                 name, args = tc["name"], tc["args"]
-                if name == "_SubmitAnswer":
-                    self.logger.info("Metrics submitted: %s", args["metrics"])
+                if name in ("_SubmitAnswer", "SubmitAnswer", "_submitanswer", "submit_answer"):
+                    metrics = args.get("metrics", args)
+                    if not metrics:
+                        self.logger.warning("_SubmitAnswer called with empty metrics — asking LLM to retry.")
+                        messages.append(ToolMessage(
+                            content="Error: metrics was empty. Re-read the output files and call _SubmitAnswer again with the actual computed values.",
+                            tool_call_id=tc["id"],
+                        ))
+                        break  # go to next turn
+                    self.logger.info("Metrics submitted: %s", metrics)
                     messages.append(ToolMessage(content="Answer recorded.", tool_call_id=tc["id"]))
-                    return args["metrics"]
+                    return metrics
                 result = self._dispatch_tool(name, args, working_dir)
+                self._log_tool_result(name, args, str(result))
                 messages.append(ToolMessage(content=str(result), tool_call_id=tc["id"]))
+            
+            return {}
 
     def _dispatch_tool(self, name: str, args: dict, working_dir: str) -> str:
         if name == "_ReadFile":

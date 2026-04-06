@@ -27,7 +27,7 @@ def run_lammps():
             cwd=work_dir,
             capture_output=True,
             text=True,
-            timeout=600,
+            timeout=420,
         )
         return jsonify({
             "work_dir":   work_dir,

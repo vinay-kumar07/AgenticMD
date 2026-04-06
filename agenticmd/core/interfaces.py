@@ -5,8 +5,8 @@ from typing import Dict, List, Tuple
 class DocsFetcher(ABC):
     @abstractmethod
     def fetch(self, command: str, full_line: str = "") -> str:
-        """Return documentation for a LAMMPS command.
-        full_line: complete script line used to resolve style sub-pages."""
+        """Return documentation for a simulation command or keyword.
+        full_line: complete script line used for context (e.g. style resolution)."""
 
 
 class PotentialDownloader(ABC):
@@ -19,13 +19,13 @@ class PotentialDownloader(ABC):
 class ScriptGenerator(ABC):
     @abstractmethod
     def generate(self, problem: str, task: dict, working_dir: str) -> str:
-        """Generate a complete LAMMPS input script."""
+        """Generate a complete simulation input script."""
 
 
 class ScriptFixer(ABC):
     @abstractmethod
     def fix(self, script: str, error: str, task: dict) -> str:
-        """Return a corrected script given the LAMMPS error output."""
+        """Return a corrected script given the error output."""
 
 
 class SimulationRunner(ABC):

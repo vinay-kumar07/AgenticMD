@@ -77,7 +77,7 @@ class DraftRefineScriptGenerator(LLMComponent, ScriptGenerator):
     # ------------------------------------------------------------------
 
     def _draft(self, problem: str, task: dict) -> str:
-        result = self.llm.invoke([
+        result = self._call_llm("Draft", [
             SystemMessage(content=DRAFT_SCRIPT_PROMPT),
             HumanMessage(content=f"Problem: {problem}\nTask: {json.dumps(task)}"),
         ])
@@ -89,7 +89,7 @@ class DraftRefineScriptGenerator(LLMComponent, ScriptGenerator):
             f"Draft script:\n{draft}\n\n"
             f"Command documentation:\n{json.dumps(docs, indent=2)}"
         )
-        result = self.llm.invoke([
+        result = self._call_llm("Refine", [
             SystemMessage(content=REFINE_SCRIPT_PROMPT),
             HumanMessage(content=user_prompt),
         ])
